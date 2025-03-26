@@ -1,0 +1,74 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+    --primary-color: #ffa1a1;
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --secondary-background: #f6f6f6;
+    --border-radius-large: 30px;
+    --border-radius-medium: 20px;
+    --border-radius-small: 15px;
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  body {
+    font-family: Poppins, var(--default-font-family);
+    color: var(--text-color);
+    line-height: 1.5;
+    background-color: white;
+  }
+  
+  button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  input {
+    font-family: inherit;
+    border: none;
+    outline: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .main-container {
+    position: relative;
+    justify-content: center ;
+    width: 1920px;
+    height: 1601px;
+    margin: 0 auto;
+    background: var(--background-color);
+    overflow: hidden;
+    background-color: transparent !important;
+  }
+
+  
+  .content-background {
+    margin: -100px auto auto -100px;
+    position: absolute;
+    background-color: transparent !important;
+    width: 1390px;
+    height: 1413px;
+    top: 90px;
+    left: 210px;
+    background: var(--secondary-background);
+    opacity: 0.5;
+    z-index: -1;
+  }

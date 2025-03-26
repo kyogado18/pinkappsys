@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" />
+      <link rel="stylesheet" href="../Products/Main/main.css"/>
+      <link rel="stylesheet" href="../Products/Main/content.css">
+      <link rel="stylesheet" href="main.css">
+      <link rel="stylesheet" href="content.css">
+      <script src="product.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="content-background"></div>
+
+
+      <!-- Main Content Area -->
+      <main class="main-content" id="main-content">
+        <!-- Search Bar -->
+        <div class="search-container">
+          <div class="search-box">
+            <div class="search-icon"></div>
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button class="search-button">Search</button>
+          </div>
+        </div>
+
+        <!-- Product Gallery -->
+        
+        
+        <section class="product-gallery">
+          <div class="scroll-pane">
+            <div class="scroll-content">
+          
+                <button class="addbutton" id="addbutton"></button>
+
+
+              <!-- Product Grid -->
+              <div class="product-grid">
+                <!-- Row 1 -->
+                <div class="product-row">
+                  <article class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit"  id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+
+                  <article class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit" id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+
+                  <article class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit" id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="product-row">
+                  <article class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit" id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+
+                  <article class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit"  id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+
+                  <article class="product-card">
+                    <div class="product-image"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit"  id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="product-row small-cards">
+                  <article class="product-card small">
+                    <div class="product-image small"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit"  id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+
+                  <article class="product-card small">
+                    <div class="product-image small"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit"  id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+
+                  <article class="product-card small">
+                    <div class="product-image small"></div>
+                    <div class="product-actions">
+                      <button class="btn-edit" id="editbutton">Edit</button>
+                      <button class="btn-delete">Delete</button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overlay" id="overlay">
+            <div class="main-container">
+              <div class="food-box">
+                
+                <button class="add-stock" >
+                  <span>Add Stock</span>
+                </button>
+        
+        
+                <div class="flex-row-ec">
+                  <span class="add-stocks">Add Stocks</span>
+                  <button class="reject" id="reject"></button>
+                </div>
+                <div class="flex-row-eaa">
+                    <div class="rectangle"></div>
+                    <div class="rectangle-4"></div>
+                    <div class="rectangle-6"></div>
+                    <div class="rectangle-8"></div>
+                    <div class="group-2"></div>
+        
+                    <div class="inputbox">
+                        <input type="text" required="required">
+                        <span>Product ID</span>
+                        <i></i>
+                    </div>
+        
+                  
+                  
+                    <div class="inputbox">
+                        <input type="text" required="required">
+                        <span>Name</span>
+                        <i></i>
+                    </div>
+                  
+                    <div class="inputbox">
+                        <input type="text" required="required">
+                        <span>Price</span>
+                        <i></i>
+                    </div>
+        
+                    <div class="inputbox">
+                        <input type="text" required="required">
+                        <span>Category</span>
+                        <i></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="overlay1" id="overlay1">
+              <div class="main-container1">
+                <div class="food-box1">
+                  
+                  <button class="Edit-stock1" >
+                    <span>Edit Stock</span>
+                  </button>
+          
+          
+                  <div class="flex-row-ec1">
+                    <span class="add-stocks1">Edit Stocks</span>
+                    <button class="reject1" id="reject1"></button>
+                  </div>
+                  <div class="flex-row-eaa1">
+                      <div class="rectangle1"></div>
+                      <div class="rectangle-41"></div>
+                      <div class="rectangle-61"></div>
+                      <div class="rectangle-81"></div>
+                      <div class="group-21"></div>
+          
+                      <div class="inputbox1">
+                          <input type="text1" required="required1">
+                          <span>Product ID</span>
+                          <i></i>
+                      </div>
+          
+                    
+                    
+                      <div class="inputbox1">
+                          <input type="text1" required="required1">
+                          <span>Name</span>
+                          <i></i>
+                      </div>
+                    
+                      <div class="inputbox1">
+                          <input type="text1" required="required1">
+                          <span>Price</span>
+                          <i></i>
+                      </div>
+          
+                      <div class="inputbox1" >
+                          <input type="text1" required="required1" id="cat">
+                          <span>Category</span>
+                          <i></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="overlay2" id="overlay2">
+                <div class="main-container2">
+                  <div class="food-box2">
+                    
+                    <button class="Edit-stock2" >
+                      <span>Delete Stock</span>
+                    </button>
+            
+            
+                    <div class="flex-row-ec2">
+                      <span class="add-stocks2">Delete Stocks</span>
+                      <button class="reject2" id="reject2"></button>
+                    </div>
+                    <div class="flex-row-eaa2">
+                        <div class="rectangle2"></div>
+                        <div class="rectangle-42"></div>
+                        <div class="rectangle-62"></div>
+                        <div class="rectangle-82"></div>
+                        <div class="group-22"></div>
+            
+                        <div class="inputbox2">
+                            <input type="text2" required="required2">
+                            <span>Product ID</span>
+                            <i></i>
+                        </div>
+            
+                      
+                      
+                        <div class="inputbox2">
+                            <input type="text2" required="required2">
+                            <span>Name</span>
+                            <i></i>
+                        </div>
+                      
+                        <div class="inputbox2">
+                            <input type="text2" required="required2">
+                            <span>Price</span>
+                            <i></i>
+                        </div>
+            
+                        <div class="inputbox2">
+                            <input type="text2" required="required2" id="cat2">
+                            <span>Category</span>
+                            <i></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+      </div>
+        </section>
+      </main>
+      
+    </div>
+  </body>
+</html>

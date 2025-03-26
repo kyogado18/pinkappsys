@@ -1,0 +1,944 @@
+.main-content {
+    position: absolute;
+    justify-content: center;
+    top: 90px;
+    left: 471px;
+    width:1400px;
+    height: 1413px;
+    padding: 69px 0 0 80px;
+    margin-left: -350px;
+    margin-top: -100px;
+    background-color: transparent;
+  }
+
+
+  
+  /* Search Container */
+  .search-container {
+    position: relative;
+    margin-bottom: 80px;
+    margin-left: 200px;
+  }
+  
+  .search-box {
+    position: relative;
+    width: 865px;
+    height: 69px;
+    background: var(--background-color);
+    border-radius: var(--border-radius-large);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .search-icon {
+    width: 29px;
+    height: 29px;
+    background: url(https://static.codia.ai/image/2025-03-22/a7e1dde1-7899-4589-935b-c1f1eed3e297.png)
+      no-repeat center;
+    background-size: cover;
+    margin-right: 20px;
+  }
+  
+  .search-input {
+    flex: 1;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    background: transparent;
+    padding: 0 15px;
+  }
+  
+  .search-button {
+    background-color: var(--primary-color);
+    color: black;
+    font-weight: 600;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius-small);
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #ff8a8a;
+  }
+  
+  /* Product Gallery */
+  .product-gallery {
+    position: relative;
+    width: 1099px;
+    height: 800px;
+    margin-left: 80px;
+  }
+  
+  .scroll-pane {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    border-radius: var(--border-radius-medium);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .scroll-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 30px 50px;
+  }
+  .scroll-thumb {
+    position: relative;
+    width: 17.35px;
+    height: 214.872px;
+    background: var(--primary-color);
+    border-radius: var(--border-radius-small);
+  }
+  
+  .addbutton {
+    margin-left: 900px;
+    width: 38px;
+    height: 38px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background-image: url(https://static.codia.ai/image/2025-03-22/d51aec7a-2406-4c13-803a-2137aa89a787.png);
+  }
+  
+  .addbutton:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Product Grid */
+  .product-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 49px;
+  }
+  
+  .product-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .product-card {
+    position: relative;
+    width: 275px;
+    height: 334.833px;
+    background: var(--background-color);
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #FFA1A1;
+  }
+  
+  .product-image {
+    width: 247.385px;
+    height: 247.385px;
+    margin: 43.724px auto 0;
+    background: url(https://static.codia.ai/image/2025-03-22/9a19224a-393c-4673-a331-caa66fc35069.png)
+      no-repeat center;
+    background-size: cover;
+  }
+  
+  .product-card.small {
+    height: 203px;
+  }
+  
+  .product-image.small {
+    height: 145.276px;
+    margin-top: 30px;
+  }
+  
+  .product-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover .product-actions {
+    transform: translateY(0);
+    background-color: #FFA1A1;
+  }
+  
+  .product-actions button {
+    padding: 5px 10px;
+    border-radius: var(--border-radius-small);
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cart {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-edit {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .btn-delete {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .btn-cart:hover {
+    background-color: #ff8a8a;
+  }
+  
+  .btn-edit:hover {
+    background-color: #3e8e41;
+  }
+  
+  .btn-delete:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Small cards in the last row */
+  .small-cards {
+    margin-top: -20px;
+  }
+  
+  .small-cards .product-card:nth-child(1) .product-image {
+    background-image: url(https://static.codia.ai/image/2025-03-22/0183260e-2268-4bc5-951d-d9055aef7c57.png);
+  }
+  
+  .small-cards .product-card:nth-child(2) .product-image {
+    background-image: url(https://static.codia.ai/image/2025-03-22/89be91a4-aff5-46b6-a2ad-e441cffdfc74.png);
+  }
+  
+  .small-cards .product-card:nth-child(3) .product-image {
+    background-image: url(https://static.codia.ai/image/2025-03-22/3e4a352c-e131-4e01-8693-5d54d5e46ca6.png);
+  }
+
+
+
+  .overlay {
+    position: absolute;
+    justify-content: center;
+    top: 90px;
+    left: 471px;
+    width: 100%;
+    height: 100%;
+    padding: 69px 0 0 80px;
+    margin-left: -470px;
+    margin-top: -90px;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Ensure compatibility */
+    display: none;
+    border-radius: 10px; /* Optional: Smooth rounded edges */
+}
+
+
+.main-container {
+  position: relative;
+  width: 2000px;
+  height: 1500px;
+  margin: 200px auto auto auto;
+}
+.food-box {
+  margin-top: 110px;
+  margin-left: 120px;
+  border: 2px solid black;
+  position: absolute;
+  width: 700px;
+  height: 600px;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  z-index: 1;
+  border-radius: 30px;
+ justify-content: center;
+}
+.add-stock {
+  display: flex;
+  position: absolute;
+  height: 56px;
+  top: 2px;
+  left: 47px;
+  width: 200px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 24px;
+  line-height: 56px;
+  margin:470px auto auto 10px;
+  z-index: 7;
+  background-color: blue;
+  border-radius: 20px;
+  border: 0;
+}
+.add-stock span{
+  display: flex;
+  margin-left: 40px;
+}
+.add-stock:hover{
+  background-color: #ffa1a1;
+}
+.flex-row-ec {
+  position: absolute;
+  width: 387.075px;
+  height: 50.22px;
+  top: 26px;
+  left: 46.094px;
+  z-index: 3;
+}
+.add-stocks {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 50.22px;
+  top: 0;
+  left: 56.906px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 50.22px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.32px;
+  z-index: 2;
+}
+.reject {
+  position: absolute;
+  width: 30px;
+  height:30px;
+  top: 10px;
+  left: 0;
+  background: url(https://static.codia.ai/image/2025-03-22/b6ecab98-d0fa-4c5d-8430-70ec40092ed4.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 3;
+  border:10;
+  border-radius: 20px;
+}
+.reject:hover{
+  background-color: #ffa1a1;
+}
+.flex-row-eaa {
+  position: absolute;
+  width: 608px;
+  height: 378.833px;
+  top: 63px;
+  left: 53px;
+  z-index: 28;
+}
+.inputbox {
+  position: relative;
+  width: 300px;
+  margin: 45px auto auto 340px;
+}
+
+.inputbox input {
+  position: relative;
+  width: 290px;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  margin-top:-10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid~span,
+.inputbox input:focus~span {
+  color: black;
+  transform: translateX(-10px) translateY(-36px);
+  font-size: 0, 75rem;
+}
+
+.inputbox input:valid~i,
+.inputbox input:focus~i {
+  height: 44px;
+}
+.group-2 {
+  position: absolute;
+  width: 280px;
+  height: 334.833px;
+  top: 44px;
+  left: 0;
+  background: url(https://static.codia.ai/image/2025-03-22/6e53ab2f-17f7-4bb5-b79d-b16550601de2.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 28;
+}
+.rectangle {
+  position: absolute;
+  width: 5px;
+  height: 50px;
+  top: 48px;
+  left: 314px;
+  background: #ffa1a1;
+  z-index: 12;
+}
+.rectangle-4 {
+  position: absolute;
+  width: 5px;
+  height: 50px;
+  top: 136px;
+  left: 314px;
+  background: #ffa1a1;
+  z-index: 17;
+}
+.t-shirt {
+  display: flex;
+  position: absolute;
+  height: 50px;
+  width: 300px;
+  top: 0;
+  left: 331px;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  z-index: 11;
+  margin-top: 135px;
+}
+.rectangle-6 {
+  position: absolute;
+  width: 5px;
+  height: 50px;
+  top: 224px;
+  left: 314px;
+  background: #ffa1a1;
+  z-index: 22;
+}
+.rectangle-7 {
+  position: absolute;
+  width: 280px;
+  height: 50px;
+  top: 224px;
+  left: 328px;
+  background: url(https://static.codia.ai/image/2025-03-22/59da19e6-63ab-48f3-8a36-7a9736ae1538.svg)
+    no-repeat center;
+  background-size: cover;
+  z-index: 20;
+}
+.category {
+  display: flex;
+  position: absolute;
+  height: 50px;
+  width: 300px;
+  top: 0;
+  left: 331px;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  z-index: 11;
+  margin-top: 310px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.rectangle-8 {
+  position: absolute;
+  width: 5px;
+  height: 50px;
+  top: 330px;
+  left: 314px;
+  background: #ffa1a1;
+  z-index: 27;
+}
+.rectangle-9 {
+  position: absolute;
+  width: 280px;
+  height: 50px;
+  top: 311px;
+  left: 328px;
+  background: url(https://static.codia.ai/image/2025-03-22/e66c9b6b-f42f-4431-8995-e0e88fed9d5c.svg)
+    no-repeat center;
+  background-size: cover;
+  z-index: 25;
+}
+/**/
+.overlay1 {
+  position: absolute;
+  justify-content: center;
+  top: 90px;
+  left: 471px;
+  width: 100%;
+  height: 100%;
+  padding: 69px 0 0 80px;
+  margin-left: -470px;
+  margin-top: -90px;
+  background: rgba(255, 255, 255, 0.2); /* Transparent white */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Ensure compatibility */
+  display: none;
+  border-radius: 10px; /* Optional: Smooth rounded edges */
+}
+.main-container1 {
+position: relative;
+width: 2000px;
+height: 1500px;
+margin: 200px auto auto auto;
+}
+.food-box1 {
+margin-top: 110px;
+margin-left: 120px;
+border: 2px solid black;
+position: absolute;
+width: 700px;
+height: 600px;
+top: 0;
+left: 0;
+background: #ffffff;
+z-index: 1;
+border-radius: 30px;
+justify-content: center;
+}
+.Edit-stock1 {
+display: flex;
+position: absolute;
+height: 56px;
+top: 2px;
+left: 47px;
+width: 200px;
+color: #000000;
+font-family: Poppins, var(--default-font-family);
+font-size: 24px;
+line-height: 56px;
+margin:470px auto auto 10px;
+z-index: 7;
+background-color: blue;
+border-radius: 20px;
+border: 0;
+}
+.Edit-stock1 span{
+  display: flex;
+  margin-left: 45px;
+}
+.add-stock1 span{
+display: flex;
+margin-left: 40px;
+}
+.add-stock1:hover, .Edit-stock1:hover ,.Edit-stock2:hover{
+background-color: #ffa1a1;
+}
+.flex-row-ec1 {
+position: absolute;
+width: 387.075px;
+height: 50.22px;
+top: 26px;
+left: 46.094px;
+z-index: 3;
+}
+.add-stocks1 {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+position: absolute;
+height: 50.22px;
+top: 0;
+left: 56.906px;
+color: #000000;
+font-family: Poppins, var(--default-font-family);
+font-size: 32px;
+font-weight: 600;
+line-height: 50.22px;
+text-align: left;
+white-space: nowrap;
+letter-spacing: 0.32px;
+z-index: 2;
+}
+.reject1 {
+position: absolute;
+width: 30px;
+height:30px;
+top: 10px;
+left: 0;
+background: url(https://static.codia.ai/image/2025-03-22/b6ecab98-d0fa-4c5d-8430-70ec40092ed4.png)
+  no-repeat center;
+background-size: cover;
+z-index: 3;
+border:10;
+border-radius: 20px;
+}
+.reject1:hover{
+background-color: #ffa1a1;
+}
+.flex-row-eaa1 {
+position: absolute;
+width: 608px;
+height: 378.833px;
+top: 63px;
+left: 53px;
+z-index: 28;
+}
+.inputbox1 {
+position: relative;
+width: 300px;
+margin: 45px auto auto 340px;
+}
+
+.inputbox1 input {
+position: relative;
+width: 290px;
+padding: 20px 10px 10px;
+background: transparent;
+outline: none;
+box-shadow: none;
+border: none;
+border-bottom: 2px solid black;
+color: black;
+font-size: 1em;
+letter-spacing: 0.05em;
+transition: 0.5s;
+z-index: 10;
+}
+
+.inputbox1 span {
+position: absolute;
+left: 0;
+padding: 20px 10px 10px;
+margin-top:-10px;
+font-size: 1em;
+color: #8f8f8f;
+letter-spacing: 00.05em;
+transition: 0.5s;
+pointer-events: none;
+}
+
+.inputbox1 i {
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 2px;
+background: white;
+border-radius: 4px;
+transition: 0.5s;
+pointer-events: none;
+z-index: 9;
+}
+
+.inputbox1 input:valid~span,
+.inputbox1 input:focus~span {
+color: black;
+transform: translateX(-10px) translateY(-36px);
+font-size: 0, 75rem;
+}
+
+.inputbox1 input:valid~i,
+.inputbox1 input:focus~i {
+height: 44px;
+}
+.group-21 {
+position: absolute;
+width: 280px;
+height: 334.833px;
+top: 44px;
+left: 0;
+background: url(https://static.codia.ai/image/2025-03-22/6e53ab2f-17f7-4bb5-b79d-b16550601de2.png)
+  no-repeat center;
+background-size: cover;
+z-index: 28;
+}
+.rectangle1 {
+position: absolute;
+width: 5px;
+height: 50px;
+top: 48px;
+left: 314px;
+background: #ffa1a1;
+z-index: 12;
+}
+.rectangle-41 {
+position: absolute;
+width: 5px;
+height: 50px;
+top: 136px;
+left: 314px;
+background: #ffa1a1;
+z-index: 17;
+}
+.rectangle-61 {
+  position: absolute;
+  width: 5px;
+  height: 50px;
+  top: 230px;
+  left: 314px;
+  background: #ffa1a1;
+  z-index: 22;
+}
+.rectangle-81 {
+position: absolute;
+width: 5px;
+height: 50px;
+top: 335px;
+left: 314px;
+background: #ffa1a1;
+z-index: 27;
+}
+
+/**/
+.overlay2{
+  position: absolute;
+  justify-content: center;
+  top: 90px;
+  left: 471px;
+  width: 100%;
+  height: 100%;
+  padding: 69px 0 0 80px;
+  margin-left: -470px;
+  margin-top: -90px;
+  background: rgba(255, 255, 255, 0.2); /* Transparent white */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Ensure compatibility */
+  display: none;
+  border-radius: 10px; /* Optional: Smooth rounded edges */
+}
+.main-container2 {
+position: relative;
+width: 2000px;
+height: 1500px;
+margin: 200px auto auto auto;
+}
+.food-box2 {
+margin-top: 110px;
+margin-left: 120px;
+border: 2px solid black;
+position: absolute;
+width: 700px;
+height: 600px;
+top: 0;
+left: 0;
+background: #ffffff;
+z-index: 1;
+border-radius: 30px;
+justify-content: center;
+}
+.Edit-stock2 {
+display: flex;
+position: absolute;
+height: 56px;
+top: 2px;
+left: 47px;
+width: 200px;
+color: #000000;
+font-family: Poppins, var(--default-font-family);
+font-size: 24px;
+line-height: 56px;
+margin:470px auto auto 10px;
+z-index: 7;
+background-color: blue;
+border-radius: 20px;
+border: 0;
+}
+.Edit-stock2 span{
+  display: flex;
+  margin-left: 30px;
+}
+.add-stock2 span{
+display: flex;
+margin-left: 40px;
+}
+.flex-row-ec2 {
+position: absolute;
+width: 387.075px;
+height: 50.22px;
+top: 26px;
+left: 46.094px;
+z-index: 3;
+}
+.add-stocks2 {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+position: absolute;
+height: 50.22px;
+top: 0;
+left: 56.906px;
+color: #000000;
+font-family: Poppins, var(--default-font-family);
+font-size: 32px;
+font-weight: 600;
+line-height: 50.22px;
+text-align: left;
+white-space: nowrap;
+letter-spacing: 0.32px;
+z-index: 2;
+}
+.reject2 {
+position: absolute;
+width: 30px;
+height:30px;
+top: 10px;
+left: 0;
+background: url(https://static.codia.ai/image/2025-03-22/b6ecab98-d0fa-4c5d-8430-70ec40092ed4.png)
+  no-repeat center;
+background-size: cover;
+z-index: 3;
+border:10;
+border-radius: 20px;
+}
+.reject2:hover{
+background-color: #ffa1a1;
+}
+.flex-row-eaa2 {
+position: absolute;
+width: 608px;
+height: 378.833px;
+top: 63px;
+left: 53px;
+z-index: 28;
+}
+.inputbox2{
+position: relative;
+width: 300px;
+margin: 45px auto auto 340px;
+}
+
+.inputbox2 input {
+position: relative;
+width: 290px;
+padding: 20px 10px 10px;
+background: transparent;
+outline: none;
+box-shadow: none;
+border: none;
+border-bottom: 2px solid black;
+color: black;
+font-size: 1em;
+letter-spacing: 0.05em;
+transition: 0.5s;
+z-index: 10;
+}
+
+.inputbox2 span {
+position: absolute;
+left: 0;
+padding: 20px 10px 10px;
+margin-top:-10px;
+font-size: 1em;
+color: #8f8f8f;
+letter-spacing: 00.05em;
+transition: 0.5s;
+pointer-events: none;
+}
+
+.inputbox2 i {
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 2px;
+background: white;
+border-radius: 4px;
+transition: 0.5s;
+pointer-events: none;
+z-index: 9;
+}
+
+.inputbox2 input:valid~span,
+.inputbox2 input:focus~span {
+color: black;
+transform: translateX(-10px) translateY(-36px);
+font-size: 0, 75rem;
+}
+
+.inputbox2 input:valid~i,
+.inputbox2 input:focus~i {
+height: 44px;
+}
+.group-22 {
+position: absolute;
+width: 280px;
+height: 334.833px;
+top: 44px;
+left: 0;
+background: url(https://static.codia.ai/image/2025-03-22/6e53ab2f-17f7-4bb5-b79d-b16550601de2.png)
+  no-repeat center;
+background-size: cover;
+z-index: 28;
+}
+.rectangle2 {
+position: absolute;
+width: 5px;
+height: 50px;
+top: 48px;
+left: 314px;
+background: #ffa1a1;
+z-index: 12;
+}
+.rectangle-42 {
+position: absolute;
+width: 5px;
+height: 50px;
+top: 136px;
+left: 314px;
+background: #ffa1a1;
+z-index: 17;
+}
+.rectangle-62 {
+  position: absolute;
+  width: 5px;
+  height: 50px;
+  top: 230px;
+  left: 314px;
+  background: #ffa1a1;
+  z-index: 22;
+}
+.rectangle-82 {
+position: absolute;
+width: 5px;
+height: 50px;
+top: 335px;
+left: 314px;
+background: #ffa1a1;
+z-index: 27;
+}
+
+
+
+ 
