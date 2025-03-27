@@ -106,3 +106,31 @@ body{
     background: white;
     height: 1000px;
 }
+
+.profile{
+    display: none;
+}
+.orders{
+    display: none;
+}
+.designs{
+    display: none;
+}
+.designs-display{
+    display: flex;
+    justify-content: center;
+    background: white;
+    height: 1000px;
+}
+.profile-display{
+    display: flex;
+    justify-content: center;
+    background: white;
+    height: 1000px;
+}
+.orders-display{
+    display: flex;
+    justify-content: center;
+    background: white;
+    height: 1000px;
+}
