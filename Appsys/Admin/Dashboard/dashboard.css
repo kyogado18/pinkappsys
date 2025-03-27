@@ -4,6 +4,9 @@
     "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
     "Source Han Sans CN", sans-serif;
 }
+body{
+  margin: 0;
+}
 
 .main-container {
   overflow: hidden;
@@ -23,7 +26,7 @@ button {
 
 .main-container {
   position: relative;
-  width: 1920px;
+  width: 100%;
   height: 1601px;
   margin: 0 auto;
   background: #ffffff;
@@ -309,7 +312,7 @@ button {
 ,.buttonorders:hover,.buttonproduct:hover
 ,.buttonreports:hover, .group-d:hover
 ,.group-e:hover{
-    background-color: #f996ef;
+    background-color: black;
     color: black;
 }
 
