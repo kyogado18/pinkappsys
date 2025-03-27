@@ -11,58 +11,59 @@
     z-index: 1;
     background-color: rgba(128, 128, 128, 0.5);
 }
-  .search-box {
-    position: absolute;
-    width: 865px;
-    height: 69px;
-    top: 90px;
-    left: 400px;
-    background: #ffffff;
-    z-index: 75;
-    border-radius: 30px;
-  }
-  .search-date {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    height: 70px;
-    border: 0;
-    width: 700px;
-    top: -1px;
-    left: 105px;
-    color: #000000;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 70px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 0.2px;
-    z-index: 77;
-  }
-  .image-9 {
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    top: 14px;
-    left: 817px;
-    background: url(https://static.codia.ai/image/2025-03-15/799ab368-34f2-4f97-a68d-1921c19a4d77.png)
-      no-repeat center;
-    background-size: cover;
-    z-index: 78;
-  }
-  .magnifying-glass {
-    position: absolute;
-    width: 29px;
-    height: 29px;
-    top: 20px;
-    left: 37px;
-    background: url(https://static.codia.ai/image/2025-03-15/74816ba5-64c3-4ffb-ba90-632554fa4472.png)
-      no-repeat center;
-    background-size: cover;
-    z-index: 76;
-  }
+.search-container {
+  position: relative;
+  margin-bottom: 80px;
+  margin-left: 370px;
+  margin-top: 100px;
+}
+
+.search-box {
+  position: relative;
+  width: 865px;
+  height: 69px;
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+  width: 29px;
+  height: 29px;
+  background: url(https://static.codia.ai/image/2025-03-22/a7e1dde1-7899-4589-935b-c1f1eed3e297.png)
+    no-repeat center;
+  background-size: cover;
+  margin-right: 20px;
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  background: transparent;
+  padding: 0 15px;
+  border: 0;
+}
+
+.search-button {
+  background-color: var(--primary-color);
+  color: black;
+  font-weight: 600;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  border: 0;
+}
+
+.search-button:hover {
+  background-color: #ff8a8a;
+}
   .image-a {
     position: absolute;
     width: 100px;

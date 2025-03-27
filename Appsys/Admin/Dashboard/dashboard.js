@@ -38,39 +38,127 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
-    // Function to display products content
     function productsdisplay() {
-        console.log('Attempting to load products.html from the "pages" folder...');
+        console.log('Attempting to load PRODUCT.html...');
 
-        fetch('../products/products.html') // Adjust path here to load from the "products" folder
+        fetch('../Products/Main/PRODUCT.html')
             .then(response => {
                 if (!response.ok) {
                     console.error('Network response was not ok', response);
                     throw new Error('Network response was not ok');
                 }
-                return response.text(); // Get the text content of the HTML file
+                return response.text();
             })
             .then(html => {
-                console.log('HTML loaded successfully');
+                console.log('PRODUCT.html loaded successfully');
                 const dashboardBody = document.getElementById('dashboardbody');
 
                 if (dashboardBody) {
-                    dashboardBody.innerHTML = html;
-                    // Save the state to localStorage to persist it after a refresh
+                    dashboardBody.innerHTML = html; // Insert product HTML
+
+                    // ✅ Add Event Listener AFTER inserting the new HTML
+                    setupProductListeners();
+                    setupProductEdit();
+                    setupProductDelete();
+
+                    // Save the state to localStorage
                     localStorage.setItem('productLoaded', 'true');
-                    localStorage.removeItem('dashboardLoaded'); // Optional: Reset dashboardLoaded state
                 } else {
                     console.error('Element with id "dashboardbody" not found');
                 }
             })
             .catch(error => {
-                console.error('Error loading products.html:', error);
+                console.error('Error loading PRODUCT.html:', error);
             });
     }
 
-    // Add event listener to buttonProduct
+    function setupProductListeners() {
+        const addButton = document.getElementById("addbutton");
+        const overlay = document.getElementById("overlay");
+        const closeOverlay = document.getElementById("reject");
+
+        console.log("Checking if addButton exists:", addButton);
+
+        if (!addButton) {
+            console.error("❌ addButton not found. Maybe PRODUCT.html didn't load?");
+            return;
+        }
+
+        addButton.addEventListener("click", function () {
+            console.log("Add button clicked, showing overlay");
+            overlay.style.display = "block";
+        });
+
+        closeOverlay.addEventListener("click", function () {
+            overlay.style.display = "none";
+        });
+
+        overlay.addEventListener("click", function (event) {
+            if (event.target === overlay) {
+                overlay.style.display = "none";
+            }
+        });
+    }
+    //
+    function setupProductEdit() {
+        const edit = document.querySelectorAll(".btn-edit")
+        const overlay1 = document.getElementById("overlay1")
+        const close1 = document.getElementById("reject1")
+        const productIDInput = document.querySelector(".inputbox1 input");
+        const category = document.querySelector("#cat")
+    
+        console.log("Checking if addButton exists:", edit);
+        productIDInput.readOnly = true;
+        category.readOnly = true;
+
+        edit.forEach(button => {
+                button.addEventListener("click", function () {
+                console.log("Edit button clicked:", this); // Logs the clicked button
+                overlay1.style.display = "block"; // Show overlay when clicked
+            });
+        });
+
+        overlay1.addEventListener("click", function (event) {
+                if (event.target === overlay1) {
+                overlay1.style.display = "none";
+            }
+        });
+
+        close1.addEventListener("click" , function(){
+            overlay1.style.display = "none"
+        })
+    }
+    //
+    function setupProductDelete() {
+        const delete2 = document.querySelectorAll(".btn-delete")
+        const overlay2 = document.getElementById("overlay2")
+        const close2 = document.getElementById("reject2")
+        const productIDInput2 = document.querySelector(".inputbox2 input");
+        const category2 = document.querySelector("#cat2")
+
+        console.log("Checking if addButton exists:", delete2);
+        productIDInput2.readOnly = true;
+        category2.readOnly = true;
+
+        delete2.forEach(button => {
+            button.addEventListener("click", function () {
+                console.log("Edit button clicked:", this); // Logs the clicked button
+                overlay2.style.display = "block"; // Show overlay when clicked
+            });
+        });
+
+        overlay2.addEventListener("click", function (event) {
+            if (event.target === overlay2) {
+                overlay2.style.display = "none";
+            }
+        });
+
+        close2.addEventListener("click" , function(){
+            overlay2.style.display = "none"
+        })
+    }
+
     const buttonProduct = document.getElementById('buttonproduct');
     if (buttonProduct) {
         buttonProduct.addEventListener('click', productsdisplay);
@@ -78,13 +166,12 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Button with id "buttonproduct" not found');
     }
 
-    // Check localStorage when the page loads to see if the product content should be displayed
+    // Auto-load if needed
     if (localStorage.getItem('productLoaded') === 'true') {
-        console.log('Product content was previously loaded, loading it now...');
-        // Automatically load the product content if it was previously loaded
         productsdisplay();
     }
 });
+
 
 //
 document.addEventListener('DOMContentLoaded', function () {
@@ -205,3 +292,4 @@ window.onload = function () {
         otherContent.style.visibility = 'hidden';
     }
 };
+
