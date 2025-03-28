@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const buttonOrder = document.getElementById("buttonproduct");
-    const item3 = document.getElementById("item-03");
+    const item3 = document.getElementById("item-3");
 
     buttonOrder.addEventListener("click", function () {
         fetch("../products/products.html")
@@ -40,11 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (extractedContent) {
                     item3.innerHTML = "";
+                    console.log("ahah")
                     while (extractedContent.firstChild) {
                         item3.appendChild(extractedContent.firstChild);
                     }
                 } else {
                     item3.innerHTML = data;
+                    console.log("se")
                 }
 
                 item3.style.opacity = "1";
@@ -59,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //
 document.addEventListener("DOMContentLoaded", function () {
     const buttonOrder = document.getElementById("buttonorder");
-    const item3 = document.getElementById("item-03");
+    const item3 = document.getElementById("item-3");
 
     buttonOrder.addEventListener("click", function () {
         fetch("../Orders/orders.html")
@@ -85,53 +87,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 //
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to display products content
-    function reportsdisplay() {
-        console.log('Attempting to load products.html from the "pages" folder...');
+document.addEventListener("DOMContentLoaded", function () {
+    const buttonOrder = document.getElementById("buttonreport");
+    const item3 = document.getElementById("item-3");
 
-        fetch('../reports/reports.html') // Adjust path here to load from the "products" folder
-            .then(response => {
-                if (!response.ok) {
-                    console.error('Network response was not ok', response);
-                    throw new Error('Network response was not ok');
-                }
-                return response.text(); // Get the text content of the HTML file
-            })
-            .then(html => {
-                console.log('HTML loaded successfully');
-                const dashboardBody = document.getElementById('dashboardbody');
+    buttonOrder.addEventListener("click", function () {
+        fetch("../reports/reports.html")
+            .then(response => response.text())
+            .then(data => {
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = data;
+                const extractedContent = tempDiv.querySelector(".container");
 
-                if (dashboardBody) {
-                    dashboardBody.innerHTML = html;
-                    // Save the state to localStorage to persist it after a refresh
-                    localStorage.setItem('reportLoaded', 'true');
-                    localStorage.removeItem('dashboardLoaded'); // Optional: Reset dashboardLoaded state
-                    localStorage.removeItem('productLoaded');
-                    localStorage.removeItem('orderLoaded');
+                if (extractedContent) {
+                    item3.innerHTML = "";
+                    while (extractedContent.firstChild) {
+                        item3.appendChild(extractedContent.firstChild);
+                    }
                 } else {
-                    console.error('Element with id "dashboardbody" not found');
+                    item3.innerHTML = data;
                 }
+
+                item3.style.opacity = "1";
+                item3.style.display = "grid"; // Ensure it's visible
             })
-            .catch(error => {
-                console.error('Error loading report.html:', error);
-            });
-    }
-
-    // Add event listener to buttonProduct
-    const buttonReport = document.getElementById('buttonreport');
-    if (buttonReport) {
-        buttonReport.addEventListener('click', reportsdisplay);
-    } else {
-        console.error('Button with id "buttonorder" not found');
-    }
-
-    // Check localStorage when the page loads to see if the product content should be displayed
-    if (localStorage.getItem('reportLoaded') === 'true') {
-        console.log('Product content was previously loaded, loading it now...');
-        // Automatically load the product content if it was previously loaded
-        reportsdisplay();
-    }
+            .catch(error => console.error("Error loading the content:", error));
+    });
 });
 
 
