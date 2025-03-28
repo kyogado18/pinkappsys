@@ -1,41 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to display dashboard content
-    function dashboarddisplay() {
-        // Use the fetch API to load the content of dashboarddisplay.html
-        fetch('dashboarddisplay.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+document.addEventListener("DOMContentLoaded", function () {
+    const buttonOrder = document.getElementById("buttondashboard");
+    const item3 = document.getElementById("item-3");
+
+    buttonOrder.addEventListener("click", function () {
+        fetch("../dashboard/dashboarddisplay.html")
+            .then(response => response.text())
+            .then(data => {
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = data;
+                const extractedContent = tempDiv.querySelector(".container");
+
+                if (extractedContent) {
+                    item3.innerHTML = "";
+                    while (extractedContent.firstChild) {
+                        item3.appendChild(extractedContent.firstChild);
+                    }
+                } else {
+                    item3.innerHTML = data;
                 }
-                return response.text(); // Get the text content of the HTML file
+
+                item3.style.opacity = "1";
+                item3.style.display = "grid"; // Ensure it's visible
             })
-            .then(html => {
-                const dashboardBody = document.getElementById('dashboardbody');
-                dashboardBody.innerHTML = html;
-
-                // Save the state to localStorage to persist it after a refresh
-                localStorage.setItem('dashboardLoaded', 'true');
-                localStorage.removeItem('productLoaded'); // Optional: Reset productLoaded key
-            })
-            .catch(error => {
-                console.error('Error loading dashboarddisplay.html:', error);
-            });
-    }
-
-    // Add event listener to buttonDashboard
-    const buttonDashboard = document.getElementById('buttondashboard');
-    if (buttonDashboard) {
-        buttonDashboard.addEventListener('click', dashboarddisplay);
-    }
-
-    // Check localStorage when the page loads to see if the dashboard should be displayed
-    if (localStorage.getItem('dashboardLoaded') === 'true') {
-        // Automatically load the dashboard content if it was previously loaded
-        dashboarddisplay();
-    } else {
-        // If dashboard is not loaded previously, load it by default
-        dashboarddisplay();
-    }
+            .catch(error => console.error("Error loading the content:", error));
+    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
