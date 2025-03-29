@@ -50,10 +50,60 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 item3.style.opacity = "1";
-                item3.style.display = "grid"; // Ensure it's visible
+                item3.style.display = "grid";
+                optionitem()
             })
             .catch(error => console.error("Error loading the content:", error));
     });
+    function optionitem(){
+        const additem = document.querySelector(".addbutton")
+        const deleteitem = document.querySelector(".deletebutton");
+        const edititem = document.querySelector(".editbutton");
+
+        const add = document.querySelector(".additem");
+        const close1 = document.querySelector(".reject button");
+
+        const edit = document.querySelector(".edititem");
+        const close2 = document.querySelector(".reject2 button");
+
+        const delete2 = document.querySelector(".deleteitem");
+        const close3 = document.querySelector(".reject3 button");
+
+        const productcontainer =document.querySelector(".productcontainer");
+        const item3 = document.querySelector(".items-3");
+        const item4 = document.querySelector(".items-3 img");
+
+        additem.addEventListener("click", function () {
+            add.style.display = "grid";
+            productcontainer.style.filter="blur(10px)"
+        })
+
+        close1.addEventListener("click", function () {
+            add.style.display = "none";
+            productcontainer.style.filter="blur(0)"
+        })
+
+        edititem.addEventListener("click", function () {
+            edit.style.display = "grid";
+            productcontainer.style.filter="blur(10px)"
+        })
+
+        close2.addEventListener("click", function () {
+            edit.style.display = "none";
+            productcontainer.style.filter="blur(0)"
+        })
+
+        deleteitem.addEventListener("click", function () {
+            delete2.style.display = "grid";
+            productcontainer.style.filter="blur(10px)"
+
+        })
+
+        close3.addEventListener("click", function () {
+            delete2.style.display = "none";
+            productcontainer.style.filter="blur(0)"
+        })
+    }
 });
 
 
@@ -63,14 +113,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const buttonOrder = document.getElementById("buttonorder");
     const item3 = document.getElementById("item-3");
 
-    buttonOrder.addEventListener("click", function () {
+    buttonOrder?.addEventListener("click", function () {
         fetch("../Orders/orders.html")
             .then(response => response.text())
             .then(data => {
                 const tempDiv = document.createElement("div");
                 tempDiv.innerHTML = data;
                 const extractedContent = tempDiv.querySelector(".container");
-                console.log("n3")
+
                 if (extractedContent) {
                     item3.innerHTML = "";
                     while (extractedContent.firstChild) {
@@ -82,10 +132,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 item3.style.opacity = "1";
                 item3.style.display = "grid"; // Ensure it's visible
+
+                // Attach overlay events after loading content
+                attachOverlayEvents();
             })
             .catch(error => console.error("Error loading the content:", error));
     });
+
+    function attachOverlayEvents() {
+        const orderButton = document.querySelector(".item-5-5");
+        const closeButton = document.querySelector(".view button");
+        const overlay = document.querySelector(".overlay");
+        const body = document.querySelector(".testcontainer");
+        if (!orderButton || !closeButton) {
+            console.error("❌ Overlay elements not found!");
+            return;
+        }
+
+        orderButton.addEventListener("click", function () {
+            overlay.style.display = "grid";
+            body.style.backgroundColor="gray"
+            console.log("✅ Overlay opened");
+        });
+
+        closeButton.addEventListener("click", function () {
+            overlay.style.display = "none";
+            body.style.backgroundColor="white"
+            console.log("✅ Overlay closed");
+        });
+    }
 });
+
+
 //
 document.addEventListener("DOMContentLoaded", function () {
     const buttonOrder = document.getElementById("buttonreport");
