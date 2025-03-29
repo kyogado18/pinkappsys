@@ -27,3 +27,21 @@ new Swiper('.card-wrapper', {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const addbutton = document.querySelector(".material-symbols-outlined")
+    const bg = document.querySelector(".main-container");
+    const cart = document.querySelector(".addtocart");
+    const reject = document.querySelector(".buttoncart button");
+
+    addbutton.addEventListener("click", function (){
+        cart.style.display = "grid";
+        bg.style.filter="blur(10px)";
+    })
+
+    reject.addEventListener("click", function (){
+        cart.style.display = "none";
+        bg.style.filter="blur(0)";
+    })
+
+})
