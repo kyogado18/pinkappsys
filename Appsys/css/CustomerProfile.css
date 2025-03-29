@@ -1,6 +1,10 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
 body{
     margin: 0;
     background: url("../images/bg.png");
+    font-family: Poppins, sans-serif;
 }
 .nav{
     background-color: white;
@@ -8,46 +12,98 @@ body{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items: center;
 }
 .userNav{
     display: flex;
-    height: 100px;
+    height: 50px;
     overflow: hidden;
     align-items: center;
 }
 .userNav img{
-    height: 90px;
-    width: 90px;
+    height: 45px;
+    width: 45px;
     border-radius: 50px;
 }
-.userNav button{
-    margin: 50px;
+.userNav .login-button{
+    margin: 20px;
     background-color: pink;
     border-radius: 50px;
     border: none;
     padding: 10px 20px 10px 20px;
     font-family: Poppins;
-    font-size: 15px;
+    font-size: 12px;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.userNav button{
+    display: flex;
+    flex-flow: column wrap;
+    text-align: left;
+    font-family: Poppins, sans-serif;
+    background: white;
+    border: 2px solid transparent;
+    cursor: pointer;
+    margin: 0px 10px 0px 10px;
+    gap: 0px;
+}
+.userNav button p{
+    margin: 0;
+}
+.userNav button .customer-name{
+    font-weight: bold;
+    font-size: 18px;
+}
+/*cart button*/
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+    cursor: pointer;
+    padding: 10px 10px 10px 10px;
+    border-radius: 50px;
+}
+.material-symbols-outlined:hover{
+    background: pink;
+}
+.userNav span{
+    margin: 0px 10px 0px 10px;
+}
+
+.userNav .login-button:hover{
+    background: white;
+    border-color: pink;
 }
 .buttonsNav{
     display: flex;
     align-items: center;
     font-family: Poppins;
+    font-size: 13px;
+    color: black;
 }
-.buttonsNav a{
+.buttonsNav a,
+.buttonsNav .nav-button{
+    background: white;
+    border: 2px solid transparent;
     text-decoration: none;
     border-radius: 20px;
     padding: 5px 20px 5px 20px;
-    margin: 0px 20px 0px 20px;
+    margin: 0px 10px 0px 10px;
+    color: black;
+    transition: 0.2s ease;
 }
-.buttonsNav a:hover{
+.buttonsNav a:hover,
+.buttonsNav .nav-button:hover{
     background-color: pink;
 }
 .buttonsNav button img{
     height: 40px;
     width: 40px;
 }
-.buttonsNav button{
+.buttonsNav .nav-add-button{
     background-color: pink;
     border-radius: 40px;
     border: none;
@@ -57,13 +113,19 @@ body{
     align-items: center;
     font-family: Poppins;
     font-size: 15px;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+}
+.buttonsNav .nav-add-button:hover{
+    border-color: pink;
+    background: white;
 }
 
 .title{
     display: flex;
     overflow: hidden;
     background-color: pink;
-    height: 100px;
+    height: 75px;
     padding: 0px 100px 0px 100px;
     justify-content: space-between;
     align-items: center;
@@ -98,6 +160,7 @@ body{
     display: flex;
     background-color: white;
     height: 1100px;
+    justify-content: center;
 }
 .slideButton{
     display: grid;
@@ -118,10 +181,14 @@ body{
 .profcus{
     display: grid;
     grid-template-columns: 220px 220px;
-    grid-template-rows: 100px 100px 100px; 
+    grid-template-rows: 100px 100px 100px;
     margin-top: 10px;
     margin-left: 160px;
     border: 1px solid black;
+}
+.insertImg{
+    display: flex;
+    justify-content: center;
 }
 .item-01{
     grid-row: 1 / 4;
@@ -129,6 +196,12 @@ body{
 }
 .item-02{
     grid-row: 2 / 4;
+}
+.item-02 div span{
+    font-weight: bold;
+    font-size: 40px;
+    padding: 0;
+    line-height: 40px;
 }
 .profileInfo{
     display: grid;
@@ -142,6 +215,29 @@ body{
     margin-bottom: 10px;
     border: 1px solid black;
 }
+.user-image{
+    margin: 10px 10px 10px 10px;
+    height: 200px;
+    width: 200px;
+    background: black;
+    border-radius: 50%;
+}
+.input{
+    display: none;
+}
+
+.upload-img-button{
+    font-size: 12px;
+    padding: 10px 20px 10px 20px;
+    background: #d2d2d2;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+}
+.upload-img-button:hover{
+    background: white;
+    border-color: pink;
+}
 .item-0{
     grid-column: 1 / 4;
     justify-items:center;
@@ -154,6 +250,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
 }
+
 .item-1 div,.item-2 div,.item-3 div,.item-4 div,.item-5 div,.item-6 div{
     color: gray;
 }

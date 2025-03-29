@@ -18,14 +18,16 @@
     <div class="nav">
         <div class="userNav">
             <img src="../images/sampleimg.png" alt="">
-            <button>Log In</button>
+            <button><p class="customer-name">Customer</p>
+                <p>Customer</p></button>
+            <a href="login.html" class="login-button">Log Out</a>
         </div>
         <div class="buttonsNav">
-            <a href="">Home</a>
-            <a href="">Designs</a>
-            <a href="">Profile</a>
-            <a href="">Orders</a>
-            <button><img src="../tshirt%202.png" alt="">Add a Design</button>
+            <button class="nav-button" href="">Home</button>
+            <button class="nav-button" href="">Designs</button>
+            <button class="nav-button" href="">Profile</button>
+            <button class="nav-button" href="">Orders</button>
+            <button class="nav-add-button"><img src="../images/tshirt%202.png" alt="">Add a Design</button>
         </div>
     </div>
     <div class="title">
@@ -41,12 +43,17 @@
         <div>
             <div class="profcus" id="profcus">
                 <div class="item-01">
-                    <div><img src="" alt=""></div>
-                    <div class="insertImg"><input type="file" ></div>
+                    <div>
+                        <img class="user-image" src="../images/sampleimg.png" alt="" id="profile-pic">
+                    </div>
+                    <div class="insertImg">
+                        <label class="upload-img-button" for="input-file">Update Image</label>
+                        <input class="input" type="file" accept="image/jpg, image/png, image/jpeg" id="input-file">
+                    </div>
                 </div>
                 <div class="item-02">
-                    <div><span>USERNAME</span></div>
-                    <span>Name</span>
+                    <div><span>Customer Username</span></div>
+                    <span>Customer Full Name</span>
                 </div>
             </div>
                     
@@ -186,7 +193,6 @@
 
       </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../scripts/customer-profile.js"></script>
 </body>
 </html>
