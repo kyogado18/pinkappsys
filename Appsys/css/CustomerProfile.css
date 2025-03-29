@@ -171,9 +171,12 @@ body{
     gap: 20px;
 }
 .slideButton button{
+    transition: 0.2s ease;
     background-color: #fff;
     border: 0;
     border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 40px 10px 40px;
 }
 .slideButton button:hover{
     background-color: pink;
