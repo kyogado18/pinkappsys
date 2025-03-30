@@ -37,17 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirm = document.querySelector(".confirm");
     const reject1 = document.querySelector(".view button");
     const accept = document.querySelector(".accept");
-    const overlay1= document.querySelector(".overlay1");
-    const reject2 =document.querySelector(".view1 button");
-
-    reject2.addEventListener("click", function() {
-        overlay1.style.display = "none";
-        bg.style.filter = "blur(0)";
-    })
 
     accept.addEventListener("click", function () {
-        overlay1.style.display = "grid";
-        overlay.style.display = "none"
+        overlay.style.display = "none";
+        bg.style.filter="blur(0)";
     })
 
     confirm.addEventListener("click", function () {
