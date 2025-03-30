@@ -52,6 +52,24 @@ body{
   background-color: white;
   height: 100%;
 }
+.buttonproduct,
+.buttonorder,
+.buttondashboard,
+.buttonreport,
+.buttonlog-out{
+  border: 2px solid transparent;
+  transition: 0.2s ease;
+  background: pink;
+}
+.buttonproduct:hover,
+.buttonorder:hover,
+.buttondashboard:hover,
+.buttonreport:hover,
+.buttonlog-out:hover{
+  border-color: pink;
+  background: white;
+}
+
 .item-2 .item-2-1{
   display: grid;
   margin-top: 40px;
@@ -63,10 +81,14 @@ body{
   margin-top: 10px;
   grid-column: 2/2;
   border-radius: 20px;
-  border: 1px solid black;
 }
-.item-2 button:hover{
-  background-color: pink;
+.buttonlog-out{
+  margin-top: 10px;
+  grid-column: 2/2;
+  border-radius: 20px;
+}
+.buttonlog-out span{
+  justify-content: center;
 }
 .item-3{
   grid-column:2/4 ;

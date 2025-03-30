@@ -46,18 +46,18 @@
 }
 .item-5 .hr1{
   border: 20px;
-  background-color:1px solid black;
+  border: 1px solid black;
   width: 100%;
 }
 
 .overlay {
   border-radius: 30px;
   position: fixed;
-  margin-top: 21%;
+  margin: 25% 0 0 0;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  height: 97%;
+  height: 70%;
   margin-left: 150px;
   background-color: white;
   border: 1px solid black;
@@ -72,13 +72,13 @@
 }
 
 .loc{
-  grid-column: 2/4;
+  grid-column: 2/ span4;
   grid-row: 2/3;
   justify-items: flex-start;
   display: grid;
   background-color: wheat;
   border-radius: 25px;
-  margin-bottom: 5px;
+  margin: 0px 50px 5px 0px;
 }
 .loc{
   grid-template-columns: 50px auto;
@@ -124,13 +124,15 @@
   border-radius: 10px;
 }
 .payment{
-  grid-column: 2/4;
+  grid-column: 2/span4;
   grid-row: 3/4;
   display: grid;
   grid-template-columns: 50px auto 50px;
   grid-template-rows: 50px 30px;
   background-color: wheat;
   border-radius: 25px;
+  margin: 0px 50px 0px 0px;
+  padding: 0px 50px 0px 0px;
 }
 .payment img{
   grid-column: 1/2;
@@ -160,10 +162,11 @@
 }
 .ordersum{
   grid-row: 4/5;
-  grid-column: 2/4;
+  grid-column: 2/ span 4;
   border-radius: 20px;
-  margin-top: 10px;
+  margin: 10px 50px 0px 0px;
   background-color: wheat;
+  padding: 0px 50px 0px 0px;
 }
 .ordersum{
   display: grid;

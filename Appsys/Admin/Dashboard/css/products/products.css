@@ -32,13 +32,13 @@
   justify-self: end;
 }
 .items-3 {
-  grid-column: 1/4;
+  grid-column: 1/  4;
   margin-top: 100px;
   background-color: white;
-  display: grid;
+  /*display: grid;*/
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  padding: 0px;
+  padding: 0px 50px 0px 50px;
   height: 350px;
   overflow-y: auto;
 }
@@ -173,7 +173,7 @@
 .productid input:focus~span, .name1 input:focus~span,.price1 input:focus~span, .category1 input:focus~span {
   color: gray;
   transform: translateX(-10px) translateY(-20px);
-  font-size: 0, 75rem;
+  font-size: 0.75rem;
 }
 
 .productid input:valid~i,.name1 input:valid~i,.name1 input:focus~span, .category1 input:valid~span,
