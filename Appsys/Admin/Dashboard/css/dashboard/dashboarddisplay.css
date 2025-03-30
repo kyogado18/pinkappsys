@@ -1,7 +1,8 @@
 body{
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.56);
 }
 .dashboardcontainer{
+  padding: 50px 50px 50px 50px;
   display: grid;
   grid-template-rows: 80px 220px 80px 220px 220px;
   grid-template-columns: auto auto auto auto auto auto auto;
@@ -55,4 +56,15 @@ body{
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.totalproduct,
+.totalorder,
+.totalsale{
+  background-color: white;
+  height: 190px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  display: grid;
+  grid-template-rows: 50px auto;
+  grid-template-columns: 100px auto;
 }
