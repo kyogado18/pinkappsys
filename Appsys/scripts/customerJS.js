@@ -613,4 +613,82 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>`
     })
+
+    document.querySelectorAll(".card-link").forEach(function (card) {
+        card.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Change the title
+            document.getElementById("title").innerHTML = `
+            <div>Product</div>
+            <img src="../images/sampleimg.png" alt="">`;
+
+            // Inject the new design container
+            document.getElementById("change-container").innerHTML = `
+            <div class="completed-container">
+                <div class="add-a-design-container">
+                    <div class="import-design-container">
+                        <button class="back-button" id="back-button">
+                            <span class="material-symbols-outlined">undo</span>
+                        </button>
+                        <img src="../images/sampleimg.png" alt="" id="default-tshirt">
+                    </div>
+                    <div class="design-info-container">
+                        <div class="title-1">Sizes</div>
+                        <div class="sizes-available">
+                            <div>XS</div> <div>S</div> <div>M</div>
+                            <div>L</div> <div>XL</div> <div>XXL</div>
+                        </div>
+                        <div class="title-2">Quantity</div>
+                        <div class="design-quantity-container">
+                            <div class="title-2-1">
+                                <div class="title-name">Name</div>
+                                <div class="title-jersey">Jersey No.#</div>
+                                <div class="title-size">Size</div>
+                            </div>
+                            <div class="design-info">
+                                <div class="design-info-1">
+                                    <input type="text" placeholder="Enter Display Name">
+                                    <input type="text" placeholder="Enter Jersey No.">
+                                    <select name="sizes">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                    <input type="text" placeholder="Enter Display Name">
+                                    <input type="text" placeholder="Enter Jersey No.">
+                                    <select name="sizes">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                    <input type="text" placeholder="Enter Display Name">
+                                    <input type="text" placeholder="Enter Jersey No.">
+                                    <select name="sizes">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </div>
+                                <button class="add-button">Add</button>
+                                <div class="submit-cancel-container">
+                                    <button id="submit">Submit</button>
+                                    <button id="cancel">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    })
+})
 })
