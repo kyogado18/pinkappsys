@@ -218,11 +218,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        document.getElementById("home").addEventListener("click", function () {
-            document.getElementById("title").innerHTML = `
-            <div>Home</div>
-            <img src="../images/logo.png" alt="">`;
-            document.getElementById("change-container").innerHTML = `
+    document.getElementById("home").addEventListener("click", loadHome);
+
+    document.addEventListener("click", function (event) {
+        if (event.target.closest(".card-link")) {
+            event.preventDefault();
+            loadCardDetails();
+        }
+        if(event.target.closest("#add-design-button")){
+            event.preventDefault();
+            addadesign()
+        }
+    });
+
+    function loadHome() {
+        document.getElementById("title").innerHTML = `
+        <div>Home</div>
+        <img src="../images/logo.png" alt="">`;
+
+        document.getElementById("change-container").innerHTML = `
     <div class="subTitle1">
       <div>Hot Designs🔥</div>
       <img src="../images/sampleimg.png" alt="">
@@ -313,29 +327,154 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="" class="customize-design-button"><img src="../images/custom-design.png" alt="">Customize a Design</a>
       </div>
     </div>
-  </div>`
+  </div>`;
 
-            new Swiper('.card-wrapper', {
-                loop: true,
-                spaceBetween: 30,
-                pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-                breakpoints: { 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
-            });
-        })
-        document.getElementById("add-design-button").addEventListener("click", function(){
-            event.preventDefault();
-            adddesign()
-        })
-        document.querySelector(".card-link").addEventListener("click", function(){
-            link.addEventListener("click", function (event) {
-                cards()
-                // Add event listener for the dynamically added back button
-                document.getElementById("back-button").addEventListener("click", function () {
-                    location.reload();
-                });
-            });
-        })
+        new Swiper('.card-wrapper', {
+            loop: true,
+            spaceBetween: 30,
+            pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: { 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+    }
+    function addadesign(){
+        document.getElementById("title").innerHTML = `
+            <div>Add A Design</div>
+            <img src="../images/sampleimg.png" alt="">`;
+        document.getElementById("change-container").innerHTML = `
+         <div class="completed-container">
+        <div class="add-a-design-container">
+            <div class="import-design-container">
+                <img src="../images/default-tshirt.jpg" alt="" id="default-tshirt">
+                <label class="input-file-button" for="input-file"><p>Input A Design</p></label>
+                <input class="input-file" type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+            </div>
+            <div class="design-info-container">
+                <div class="title-1">Sizes</div>
+                <div class="sizes-available">
+                    <div>XS</div>
+                    <div>S</div>
+                    <div>M</div>
+                    <div>L</div>
+                    <div>XL</div>
+                    <div>XXL</div>
+                </div>
+                <div class="title-2">Quantity</div>
+                <div class="design-quantity-container">
+                    <div class="title-2-1">
+                        <div class="title-name">Name</div>
+                        <div class="title-jersey">Jersey No.#</div>
+                        <div class="title-size">Size</div>
+                    </div>
+                    <div class="design-info">
+                        <div class="design-info-1">
+                            <input type="text" placeholder="Enter Display Name">
+                            <input type="text" placeholder="Enter Jersey No.">
+                            <select name="sizes" id="">
+                                <option value="XS">XS</option>
+                            </select>
+                        </div>
+                        <div class="design-info-1">
+                            <input type="text" placeholder="Enter Display Name">
+                            <input type="text" placeholder="Enter Jersey No.">
+                            <select name="sizes" id="">
+                                <option value="XS">XS</option>
+                            </select>
+                        </div>
+                        <div class="design-info-1">
+                            <input type="text" placeholder="Enter Display Name">
+                            <input type="text" placeholder="Enter Jersey No.">
+                            <select name="sizes" id="">
+                                <option value="XS">XS</option>
+                            </select>
+                        </div>
+                        <button class="add-button">Add</button>
+
+                        <div class="submit-cancel-container">
+                            <button id="submit">Submit</button>
+                            <button id="cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+        document.getElementById("submit").addEventListener("click", loadHome);
+        document.getElementById("cancel").addEventListener("click", loadHome);
+    }
+    function loadCardDetails() {
+        document.getElementById("title").innerHTML = `
+            <div>Product</div>
+            <img src="../images/sampleimg.png" alt="">`;
+        document.getElementById("change-container").innerHTML = `
+            <div class="completed-container">
+                <div class="add-a-design-container">
+                    <div class="import-design-container">
+                        <button class="back-button" id="back-button">
+                            <span class="material-symbols-outlined">undo</span>
+                        </button>
+                        <img src="../images/sampleimg.png" alt="" id="default-tshirt">
+                    </div>
+                    <div class="design-info-container">
+                        <div class="title-1">Sizes</div>
+                        <div class="sizes-available">
+                            <div>XS</div> <div>S</div> <div>M</div>
+                            <div>L</div> <div>XL</div> <div>XXL</div>
+                        </div>
+                        <div class="title-2">Quantity</div>
+                        <div class="design-quantity-container">
+                            <div class="title-2-1">
+                                <div class="title-name">Name</div>
+                                <div class="title-jersey">Jersey No.#</div>
+                                <div class="title-size">Size</div>
+                            </div>
+                            <div class="design-info">
+                                <div class="design-info-1">
+                                    <input type="text" placeholder="Enter Display Name">
+                                    <input type="text" placeholder="Enter Jersey No.">
+                                    <select name="sizes">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                    <input type="text" placeholder="Enter Display Name">
+                                    <input type="text" placeholder="Enter Jersey No.">
+                                    <select name="sizes">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                    <input type="text" placeholder="Enter Display Name">
+                                    <input type="text" placeholder="Enter Jersey No.">
+                                    <select name="sizes">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </div>
+                                <button class="add-button">Add</button>
+                                <div class="submit-cancel-container">
+                                    <button id="submit">Submit</button>
+                                    <button id="cancel">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        document.getElementById("submit").addEventListener("click", loadHome);
+        document.getElementById("cancel").addEventListener("click", loadHome);
+        document.getElementById("back-button").addEventListener("click",loadHome);
+    }
         document.getElementById("order").addEventListener("click", function () {
             document.getElementById("title").innerHTML = `
         <div>Orders</div>
@@ -481,72 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>`
         })
 
-    document.getElementById("add-design-button").addEventListener("click", function(){
-        document.getElementById("title").innerHTML=`
-        <div>Add Design</div>>`;
-        document.getElementById("change-container").innerHTML=`
-        <div class="completed-container">
-        <div class="subTitle1">
-            <div>Add A Design</div>
-            <img src="../images/sampleimg.png" alt="">
-        </div>
-        <div class="add-a-design-container">
-            <div class="import-design-container">
-                <img src="../images/default-tshirt.jpg" alt="" id="default-tshirt">
-                <label class="input-file-button" for="input-file"><p>Input A Design</p></label>
-                <input class="input-file" type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
-            </div>
-            <div class="design-info-container">
-                <div class="title-1">Sizes</div>
-                <div class="sizes-available">
-                    <div>XS</div>
-                    <div>S</div>
-                    <div>M</div>
-                    <div>L</div>
-                    <div>XL</div>
-                    <div>XXL</div>
-                </div>
-                <div class="title-2">Quantity</div>
-                <div class="design-quantity-container">
-                    <div class="title-2-1">
-                        <div class="title-name">Name</div>
-                        <div class="title-jersey">Jersey No.#</div>
-                        <div class="title-size">Size</div>
-                    </div>
-                    <div class="design-info">
-                        <div class="design-info-1">
-                            <input type="text" placeholder="Enter Display Name">
-                            <input type="text" placeholder="Enter Jersey No.">
-                            <select name="sizes" id="">
-                                <option value="XS">XS</option>
-                            </select>
-                        </div>
-                        <div class="design-info-1">
-                            <input type="text" placeholder="Enter Display Name">
-                            <input type="text" placeholder="Enter Jersey No.">
-                            <select name="sizes" id="">
-                                <option value="XS">XS</option>
-                            </select>
-                        </div>
-                        <div class="design-info-1">
-                            <input type="text" placeholder="Enter Display Name">
-                            <input type="text" placeholder="Enter Jersey No.">
-                            <select name="sizes" id="">
-                                <option value="XS">XS</option>
-                            </select>
-                        </div>
-                        <button class="add-button">Add</button>
 
-                        <div class="submit-cancel-container">
-                            <button>Submit</button>
-                            <button>Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>`
-    })
     document.getElementById("add").addEventListener("click", function(){
         document.getElementById("title").innerHTML=`
         <div>Add Design</div>>`;
@@ -604,91 +678,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button class="add-button">Add</button>
 
                         <div class="submit-cancel-container">
-                            <button>Submit</button>
-                            <button>Cancel</button>
+                            <button id="submit">Submit</button>
+                            <button id="cancel">Cancel</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>`
+        document.getElementById("submit").addEventListener("click", loadHome);
+        document.getElementById("cancel").addEventListener("click", loadHome);
     })
-
-    document.querySelectorAll(".card-link").forEach(function (card) {
-        card.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default link behavior
-
-            // Change the title
-            document.getElementById("title").innerHTML = `
-            <div>Product</div>
-            <img src="../images/sampleimg.png" alt="">`;
-
-            // Inject the new design container
-            document.getElementById("change-container").innerHTML = `
-            <div class="completed-container">
-                <div class="add-a-design-container">
-                    <div class="import-design-container">
-                        <button class="back-button" id="back-button">
-                            <span class="material-symbols-outlined">undo</span>
-                        </button>
-                        <img src="../images/sampleimg.png" alt="" id="default-tshirt">
-                    </div>
-                    <div class="design-info-container">
-                        <div class="title-1">Sizes</div>
-                        <div class="sizes-available">
-                            <div>XS</div> <div>S</div> <div>M</div>
-                            <div>L</div> <div>XL</div> <div>XXL</div>
-                        </div>
-                        <div class="title-2">Quantity</div>
-                        <div class="design-quantity-container">
-                            <div class="title-2-1">
-                                <div class="title-name">Name</div>
-                                <div class="title-jersey">Jersey No.#</div>
-                                <div class="title-size">Size</div>
-                            </div>
-                            <div class="design-info">
-                                <div class="design-info-1">
-                                    <input type="text" placeholder="Enter Display Name">
-                                    <input type="text" placeholder="Enter Jersey No.">
-                                    <select name="sizes">
-                                        <option value="XS">XS</option>
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                        <option value="XXL">XXL</option>
-                                    </select>
-                                    <input type="text" placeholder="Enter Display Name">
-                                    <input type="text" placeholder="Enter Jersey No.">
-                                    <select name="sizes">
-                                        <option value="XS">XS</option>
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                        <option value="XXL">XXL</option>
-                                    </select>
-                                    <input type="text" placeholder="Enter Display Name">
-                                    <input type="text" placeholder="Enter Jersey No.">
-                                    <select name="sizes">
-                                        <option value="XS">XS</option>
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                        <option value="XXL">XXL</option>
-                                    </select>
-                                </div>
-                                <button class="add-button">Add</button>
-                                <div class="submit-cancel-container">
-                                    <button id="submit">Submit</button>
-                                    <button id="cancel">Cancel</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
-    })
-})
 })
