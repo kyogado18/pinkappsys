@@ -14,13 +14,84 @@ document.addEventListener("DOMContentLoaded", function () {
                     item3.innerHTML = "";
                     while (extractedContent.firstChild) {
                         item3.appendChild(extractedContent.firstChild);
+
                     }
+
                 } else {
                     item3.innerHTML = data;
                 }
 
                 item3.style.opacity = "1";
                 item3.style.display = "grid"; // Ensure it's visible
+
+                setTimeout(() => {
+                    const canvas = document.getElementById('barchart');
+                    if (canvas) {
+                        const ctx = canvas.getContext('2d');
+
+                        const barchart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Black and Yellow Gaming Sports Jersey', 'Black and Red Football Jersey', 'Black, Red, and White Stripe Basketball Jersey',
+                                    'Golden State Warriors Style Jersey'],
+                                datasets: [{
+                                    label: 'Sales performance over month',
+                                    data: [12, 19, 3, 5],
+                                    borderWidth: 1,
+                                    backgroundColor : [
+                                        'rgba(237, 224, 0, 1)',
+                                        'rgba(255, 106, 13, 1)',
+                                        'rgba(149, 6, 6, 1)',
+                                        'rgba(42, 64, 229, 1)'
+                                    ]
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                    } else {
+                        console.error("Canvas element not found!");
+                    }
+                }, 100);
+                setTimeout(() => {
+                    const canvas = document.getElementById('doughnut');
+                    if (canvas) {
+                        const ctx = canvas.getContext('2d');
+                        const doughnut = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Black and Yellow Gaming Sports Jersey', 'Black and Red Football Jersey', 'Black, Red, and White Stripe Basketball Jersey',
+                                    'Golden State Warriors Style Jersey'],
+                                datasets: [{
+                                    label: 'Sales performance over month',
+                                    data: [12, 19, 3, 5],
+                                    borderWidth: 1,
+                                    backgroundColor : [
+                                        'rgba(237, 224, 0, 1)',
+                                        'rgba(255, 106, 13, 1)',
+                                        'rgba(149, 6, 6, 1)',
+                                        'rgba(42, 64, 229, 1)'
+                                    ]
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+                        console.error("Canvas element not found!");
+                    }
+                }, 100);
             })
             .catch(error => console.error("Error loading the content:", error));
     });
@@ -214,4 +285,19 @@ window.onload = function () {
         otherContent.style.visibility = 'hidden';
     }
 };
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutBtn = document.getElementById("buttonlog-out");
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function() {
+            // Clear user session
+            localStorage.removeItem("userToken");
+
+            // Redirect to login page
+            window.location.href = "../../../../htmls/login.html";
+        });
+    } else {
+        console.error("Logout button not found!");
+    }
+});
 

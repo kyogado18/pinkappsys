@@ -9,7 +9,7 @@ body{
 .container{
   display: grid;
   background-color: transparent;
-  grid-template-rows: 130px 450px ;
+  grid-template-rows: 130px 768px ;
   grid-template-columns: 250px 700px;
 }
 .item-1{
@@ -61,6 +61,14 @@ body{
   transition: 0.2s ease;
   background: pink;
 }
+.buttonlog-out{
+  cursor: pointer;
+}
+
+.buttonlog-out a{
+  text-decoration: none;
+  color: black;
+}
 .buttonproduct:hover,
 .buttonorder:hover,
 .buttondashboard:hover,
@@ -94,6 +102,7 @@ body{
   grid-column:2/4 ;
   grid-row:1/4;
   background-color: rgba(128, 128, 128, 0.4);
+  padding: 50px 50px 50px 50px;
 }
 .item-03{
   display: flex;
