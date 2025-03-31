@@ -294,19 +294,23 @@ body{
     margin: 0;
     padding: 0 5px;
 }
-.addtocart{
+.addtocart {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centers it properly */
     display: grid;
     grid-template-columns: 50px 70px 120px 70px 50px;
     grid-template-rows: 50px auto auto auto;
     background-color: white;
     border-radius: 20px;
     width: 400px;
-    margin-top: -1600px;
-    margin-left: 450px;
+    max-width: 90%;  /* Prevents overflow on smaller screens */
     z-index: 9999;
     display: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  /* Optional shadow for better visibility */
 }
+
 .addtocart .reject-1{
     width: 20px;
     height: 20px;
@@ -386,19 +390,24 @@ body{
     margin-left: 50px;
 }
 .overlay {
+    position: fixed;  /* Keeps it fixed at the center */
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);  /* Centers it properly */
+    width: 600px;  /* Same default width as before */
+    max-width: 90%;  /* Ensures it doesn’t overflow on smaller screens */
     border-radius: 20px;
-    margin-top: -1320px;
-    margin-left: 650px;
     background-color: white;
     border: 1px solid black;
     z-index: 9999;
     display: grid;
     grid-template-rows: 40px 80px 70px auto auto 20px;
     grid-template-columns: 40px auto 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for visibility */
     display: none;
 }
+
+
     .overlay .accept:hover {
         background-color: pink;
     }
@@ -510,6 +519,7 @@ body{
         border-radius: 20px;
         margin-top: 10px;
         background-color: wheat;
+        width: calc(100% + 30px);
     }
 
     .ordersum {
@@ -564,7 +574,7 @@ body{
         margin-top: 10px;
         height: 30px;
         width: 150px;
-        margin-left: 200px;
+        margin-left: 170px;
     }
 
 .overlay1 {
@@ -573,7 +583,7 @@ body{
     border-radius: 10px;
     margin-top: -1320px;
     margin-left: 650px;
-    width: 300px;
+    width: 400px;
     background-color: white;
     border: 1px solid black;
     z-index: 9999;
