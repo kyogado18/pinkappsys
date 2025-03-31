@@ -145,6 +145,8 @@ body{
     display: flex;
     justify-content: space-evenly;
     gap: 100px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
 }
 .pending-orders-container .pending-orders-column .column-order-no{
     display: flex;
@@ -162,7 +164,7 @@ body{
     overflow-y: auto;
     height: 50%;
 }
-.pending-orders .orders{
+.orders{
     margin: 10px 0px 10px 0px;
     display: flex;
     border: 2px solid transparent;
