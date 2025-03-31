@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function optionitem(){
         const additem = document.querySelector(".addbutton")
         const deleteitem = document.querySelector(".deletebutton");
-        const edititem = document.querySelector(".editbutton");
+        const edititem = document.querySelectorAll("#editbutton");
 
         const add = document.querySelector(".additem");
         const close1 = document.querySelector(".reject button");
@@ -154,10 +154,12 @@ document.addEventListener("DOMContentLoaded", function () {
             productcontainer.style.filter="blur(0)"
         })
 
-        edititem.addEventListener("click", function () {
-            edit.style.display = "grid";
-            productcontainer.style.filter="blur(10px)"
-        })
+        edititem.forEach(button => {
+            button.addEventListener("click", function () {
+                edit.style.display = "grid";
+                productcontainer.style.filter = "blur(10px)";
+            });
+        });
 
         close2.addEventListener("click", function () {
             edit.style.display = "none";
