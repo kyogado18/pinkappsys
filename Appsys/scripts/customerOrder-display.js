@@ -17,7 +17,7 @@ function sortTable(column) {
 
         if (!aCell || !bCell) {
             console.error('Cell not found for column:', column);
-            return 0; // Skip sorting if cell is not found
+            return 0;
         }
 
         const aText = aCell.textContent.trim();
