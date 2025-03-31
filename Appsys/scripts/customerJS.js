@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
 
             document.getElementById("change-container").innerHTML = `
-    <div class="newDesigns-container">
+    <div class="profile-container">
             <div class="slideButton">
           <button class="customerProfile" id="customerProfile"><span>Profile</span></button>
           <button class="customerPassword" id="customerPassword"><span>Password and Security</span></button>
