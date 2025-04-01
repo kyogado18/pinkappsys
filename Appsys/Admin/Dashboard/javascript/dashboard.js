@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const buttonOrder = document.getElementById("buttondashboard");
+    const buttons = document.querySelectorAll("#buttondashboard, #nav-dashboard");
     const item3 = document.getElementById("item-3");
 
-    buttonOrder.addEventListener("click", function () {
+    buttons.forEach(button => {
+        button.addEventListener("click",  loadDashboard());
+    });
+
+    function loadDashboard() {
         fetch("../dashboard/dashboarddisplay.html")
             .then(response => response.text())
             .then(data => {
@@ -14,94 +18,69 @@ document.addEventListener("DOMContentLoaded", function () {
                     item3.innerHTML = "";
                     while (extractedContent.firstChild) {
                         item3.appendChild(extractedContent.firstChild);
-
                     }
-
                 } else {
                     item3.innerHTML = data;
                 }
 
                 item3.style.opacity = "1";
-                item3.style.display = "grid"; // Ensure it's visible
+                item3.style.display = "grid";
 
-                setTimeout(() => {
-                    const canvas = document.getElementById('barchart');
-                    if (canvas) {
-                        const ctx = canvas.getContext('2d');
-
-                        const barchart = new Chart(ctx, {
-                            type: 'bar',
-                            data: {
-                                labels: ['Black and Yellow Gaming Sports Jersey', 'Black and Red Football Jersey', 'Black, Red, and White Stripe Basketball Jersey',
-                                    'Golden State Warriors Style Jersey'],
-                                datasets: [{
-                                    label: 'Sales performance over month',
-                                    data: [12, 19, 3, 5],
-                                    borderWidth: 1,
-                                    backgroundColor : [
-                                        'rgba(237, 224, 0, 1)',
-                                        'rgba(255, 106, 13, 1)',
-                                        'rgba(149, 6, 6, 1)',
-                                        'rgba(42, 64, 229, 1)'
-                                    ]
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
-                                }
-                            }
-                        });
-
-                    } else {
-                        console.error("Canvas element not found!");
-                    }
-                }, 100);
-                setTimeout(() => {
-                    const canvas = document.getElementById('doughnut');
-                    if (canvas) {
-                        const ctx = canvas.getContext('2d');
-                        const doughnut = new Chart(ctx, {
-                            type: 'doughnut',
-                            data: {
-                                labels: ['Black and Yellow Gaming Sports Jersey', 'Black and Red Football Jersey', 'Black, Red, and White Stripe Basketball Jersey',
-                                    'Golden State Warriors Style Jersey'],
-                                datasets: [{
-                                    label: 'Sales performance over month',
-                                    data: [12, 19, 3, 5],
-                                    borderWidth: 1,
-                                    backgroundColor : [
-                                        'rgba(237, 224, 0, 1)',
-                                        'rgba(255, 106, 13, 1)',
-                                        'rgba(149, 6, 6, 1)',
-                                        'rgba(42, 64, 229, 1)'
-                                    ]
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
-                                }
-                            }
-                        });
-                    } else {
-                        console.error("Canvas element not found!");
-                    }
-                }, 100);
+                setTimeout(loadCharts, 100);
             })
             .catch(error => console.error("Error loading the content:", error));
-    });
+    }
+
+    function loadCharts() {
+        ["barchart", "doughnut"].forEach(chartId => {
+            const canvas = document.getElementById(chartId);
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                new Chart(ctx, {
+                    type: chartId === "barchart" ? 'bar' : 'doughnut',
+                    data: {
+                        labels: [
+                            'Black and Yellow Gaming Sports Jersey',
+                            'Black and Red Football Jersey',
+                            'Black, Red, and White Stripe Basketball Jersey',
+                            'Golden State Warriors Style Jersey'
+                        ],
+                        datasets: [{
+                            label: 'Sales performance over month',
+                            data: [12, 19, 3, 5],
+                            borderWidth: 1,
+                            backgroundColor: [
+                                'rgba(237, 224, 0, 1)',
+                                'rgba(255, 106, 13, 1)',
+                                'rgba(149, 6, 6, 1)',
+                                'rgba(42, 64, 229, 1)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: { beginAtZero: true }
+                        }
+                    }
+                });
+            } else {
+                console.error(`Canvas element '${chartId}' not found!`);
+            }
+        });
+    }
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
-    const buttonOrder = document.getElementById("buttonproduct");
+    const buttonOrder = document.querySelectorAll("#buttonproduct, #nav-products");
     const item3 = document.getElementById("item-3");
 
-    buttonOrder.addEventListener("click", function () {
+    buttonOrder.forEach(button => {
+        button.addEventListener("click", function () {
+            loadproducts()
+        })
+    })
+    function loadproducts(){
         fetch("../products/products.html")
             .then(response => response.text())
             .then(data => {
@@ -125,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 optionitem()
             })
             .catch(error => console.error("Error loading the content:", error));
-    });
+    }
     function optionitem(){
         const additem = document.querySelector(".addbutton")
         const deleteitem = document.querySelector(".deletebutton");
@@ -183,10 +162,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //
 document.addEventListener("DOMContentLoaded", function () {
-    const buttonOrder = document.getElementById("buttonorder");
+    const buttonOrder = document.querySelectorAll("#buttonorder,#nav-orders");
     const item3 = document.getElementById("item-3");
 
-    buttonOrder?.addEventListener("click", function () {
+    buttonOrder.forEach(button => {
+        button.addEventListener("click", function () {
+            loadorders()
+        })
+    })
+    function loadorders(){
         fetch("../Orders/orders.html")
             .then(response => response.text())
             .then(data => {
@@ -210,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 attachOverlayEvents();
             })
             .catch(error => console.error("Error loading the content:", error));
-    });
+    }
 
     function attachOverlayEvents() {
         const orderButton = document.querySelector(".item-5-5");
@@ -239,10 +223,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //
 document.addEventListener("DOMContentLoaded", function () {
-    const buttonOrder = document.getElementById("buttonreport");
+    const buttonOrder = document.querySelectorAll("#buttonreport,#nav-reports");
     const item3 = document.getElementById("item-3");
 
-    buttonOrder.addEventListener("click", function () {
+    buttonOrder.forEach(button => {
+        button.addEventListener("click", function () {
+            loadreports()
+        })
+    })
+    function loadreports() {
         fetch("../reports/reports.html")
             .then(response => response.text())
             .then(data => {
@@ -263,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 item3.style.display = "grid"; // Ensure it's visible
             })
             .catch(error => console.error("Error loading the content:", error));
-    });
+    }
 });
 
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/CustomerHome.css">
     <link rel="stylesheet" href="../css/CustomerAddADesign-display.css">
     <link rel="stylesheet" href="../css/CustomerProfile.css">
@@ -32,18 +33,26 @@
       <img src="../images/sampleimg.png" alt="">
       <button><p class="customer-name">Customer</p>
       <p>Customer</p></button>
-      <a href="login.html" class="login-button">Log Out</a>
-    </div>
-    <div class="buttonsNav">
+      <a href="LandingPage.html" class="login-button">Log Out</a>
       <span class="material-symbols-outlined">
         shopping_cart
       </span>
-      <button class="nav-button" id="home">Home</button>
-      <button class="nav-button" id="design">Designs</button>
-      <button class="nav-button" id="profile">Profile</button>
-      <button class="nav-button" id="order">Orders</button>
-      <a class="nav-add-button" id="add"><img src="../images/tshirt%202.png" alt="">Add a Design</a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
+    <div class="buttonsNav">
+      <div class="menu">
+        <button class="nav-button" id="home">Home</button>
+        <button class="nav-button" id="design">Designs</button>
+        <button class="nav-button" id="profile">Profile</button>
+        <button class="nav-button" id="order">Orders</button>
+        <a class="nav-add-button" id="add"><img src="../images/tshirt%202.png" alt="">Add a Design</a>
+      </div>
+    </div>
+
   </div>
   <div class="title" id="title">
     <div>Home</div>
@@ -143,7 +152,6 @@
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="../scripts/slidescript.js"></script>
 <script src="../scripts/customerJS.js"></script>
 <script src="../scripts/customer-profile.js"></script>
 </body>

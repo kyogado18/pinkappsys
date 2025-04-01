@@ -35,23 +35,17 @@ body{
     background: white;
     height: 500px;
 }
-.subTitle1{
-    display: flex;
-    overflow: hidden;
-    background-color: white;
-    height: 100px;
-    padding: 0px 100px 0px 100px;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    font-family: Poppins;
-    font-size: 40px;
-    font-weight: bold;
-}
-.subTitle1 img{
-    opacity: 66%;
-    width: 400px;
-}
-.subTitle2{
-    background:transparent;
+@media screen and (max-width: 768px) {
+    .category-container{
+        padding: 20px 10px;
+        justify-content: space-between;
+    }
+    .nav-designs-button{
+        height: 50px;
+        padding: 10px 10px;
+    }
+    .category-container button{
+        padding: 10px 20px;
+        font-size: 20px;
+    }
 }

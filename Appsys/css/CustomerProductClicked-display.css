@@ -6,23 +6,6 @@ body{
     margin: 0;
     background: url("../images/bg.png");
 }
-.subTitle1{
-    display: flex;
-    overflow: hidden;
-    background-color: white;
-    height: 100px;
-    padding: 0px 100px 0px 100px;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    font-family: Poppins;
-    font-size: 40px;
-    font-weight: bold;
-}
-.subTitle1 img{
-    opacity: 66%;
-    width: 400px;
-}
 
 .add-a-design-container{
     margin: 10px 0px 10px 0px;
