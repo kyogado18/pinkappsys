@@ -1,223 +1,58 @@
 body{
-  padding: 0px 50px 0px 50px;
+  background-color: transparent;
 }
-.testcontainer{
-  padding: 0px 50px 0px 50px;
-  display: grid;
-  background-color: white;
-  grid-template-rows: 70px 450px ;
-  grid-template-columns:auto auto auto auto;
-  justify-content: space-between;
-}
-.item-1-1{
-  grid-column: 1/2;
-  grid-row: 1/1;
-  align-content: center;
-}
-.item-2-2{
-  grid-column: 2/3;
-  grid-row:1/2 ;
-  align-content: center;
-}
-.item-3-3{
-  grid-column: 3/4;
-  grid-row:1/2 ;
-  align-content: center;
-}
-.item-4-4{
-  grid-column: 4/5;
-  grid-row: 1/2;
-  align-content: center;
-}
-.item-5-5{
-  grid-column: 1/5;
-  grid-row: 2/3;
-  margin-top: 10px;
-}
-.item-5-5-1:hover{
-  background-color: pink;
-  padding: 5px;
-}
-.item-5-5-1 {
-  transition: 0.2s ease;
+.ordercontent{
+  grid-column: 1/8;
+  grid-row: 3/6;
   display: grid;
   grid-template-columns: auto auto auto auto;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0px 20px 0px 20px;
+  grid-template-rows: 60px auto 60px;
+  margin-top: 15px;
+  background-color: white;
   border-radius: 10px;
 }
-.item-5-5-1 .Eren{
-  margin-left: -70px;
+.ordercontent .align{
+  margin-left: 5px;
 }
-.item-5 .hr1{
-  border: 20px;
-  border: 1px solid black;
-  width: 100%;
+.align1{
+  margin-left: -60px;
 }
-
-.overlay {
-  border-radius: 30px;
-  position: fixed;
-  margin: 25% 0 0 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 70%;
-  margin-left: 150px;
-  background-color: white;
-  border: 1px solid black;
-  z-index: 9999;
-  display: grid;
-  grid-template-rows: 40px 80px 70px auto auto 20px;
-  grid-template-columns: 40px auto 40px;
-  display: none;
-}
-.overlay .accept:hover{
-  background-color: pink;
-}
-
-.loc{
-  grid-column: 2/ span4;
-  grid-row: 2/3;
-  justify-items: flex-start;
-  display: grid;
-  background-color: wheat;
-  border-radius: 25px;
-  margin: 0px 50px 5px 0px;
-}
-.loc{
-  grid-template-columns: 50px auto;
-  grid-template-rows: auto auto;
-}
-.loc h6{
-  grid-column: 2/3;
+.ordercontent .ordertext{
+  grid-column: 1/5;
   grid-row: 1/2;
-  font-size: 20px;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
 }
-.loc p{
-  grid-column: 2/3;
+.ordercontent .order{
   grid-row: 2/3;
-  margin-top:-40px;
-  font-size: 12px ;
-}
-.loc img{
-  grid-column: 1/2;
-  grid-row: 1/3;
-  width: 30px;
-  height: 30px;
-  margin-left: 15px;
-  margin-top: 20px;
-}
-.view{
   grid-column: 1/5;
 }
-.view span{
-  font-family: Arial;
-  font-size: 20px ;
-  margin-left: 40px;
+.hov{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
 }
-.view button{
-  border: none;
-  font-size: 30px;
-  background-color: white;
-  margin-left: 20px;
-  margin-top: 3px;
-}
-.view button:hover{
+.hov:hover{
   background-color: pink;
-  border-radius: 10px;
 }
-.payment{
-  grid-column: 2/span4;
+.ordercontent .total{
   grid-row: 3/4;
-  display: grid;
-  grid-template-columns: 50px auto 50px;
-  grid-template-rows: 50px 30px;
-  background-color: wheat;
-  border-radius: 25px;
-  margin: 0px 50px 0px 0px;
-  padding: 0px 50px 0px 0px;
+  grid-column: 4/5;
+  justify-self: start;
 }
-.payment img{
-  grid-column: 1/2;
-  grid-row: 1/3;
-  width: 30px;
-  height: 30px;
-  margin-left: 15px;
-  margin-top: 20px;
-}
-.payment h6{
-  grid-column: 2/3;
-  grid-row: 1/2;
-  font-size: 20px;
-  margin-top: 20px;
-}
-.payment p{
-  grid-column: 3/2;
-  font-size: 12px ;
-  margin-top: -10px;
-  margin-left: 20px;
-}
-.payment h4{
-  grid-column: 3/4;
-  grid-row: 1/3;
-  align-self: center;
-  margin-left: -20px;
-}
-.ordersum{
-  grid-row: 4/5;
-  grid-column: 2/ span 4;
-  border-radius: 20px;
-  margin: 10px 50px 0px 0px;
-  background-color: wheat;
-  padding: 0px 50px 0px 0px;
-}
-.ordersum{
-  display: grid;
-  grid-template-columns: 50px auto;
-  grid-template-rows: auto auto auto;
-}
-.ordersum img{
-  grid-column: 1/2;
-  grid-row: 1/2;
-  width: 30px;
-  height: 30px;
-  margin-left: 15px;
-  margin-top: 20px;
-}
-.ordersum h4{
-  grid-column: 2/3;
-  grid-row: 1/2;
-  margin-left: 40px;
-}
-.ordersum .sum1{
-  grid-column: 2/3;
-  grid-row: 2/3;
-  flex-direction: column;
-}
-.sum1 h4 {
-   justify-self: flex-end; /* Align to the start (left) */
-   align-self: flex-start; /* Align to the top */
-   margin-left: 0; /* Reset any left margin */
-   margin-top: -18px; /* Reset any top margin */
- }
-.overlay .sum2{
-  grid-row: 3/4;
-  grid-column: 2/3;
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
-}
-.overlay .but{
-  grid-row: 5/6;
-}
-.but button{
-  border-radius: 10px;
-  border: none;
-  margin-top: 10px;
-  height: 30px;
-  width: 150px;
-  margin-left: 200px;
+
+@media (max-width: 768px) {
+  .email {
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .align1{
+    display: flex;
+    justify-content: flex-start;
+  }
+
+
 }

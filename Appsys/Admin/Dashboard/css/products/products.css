@@ -426,3 +426,24 @@
 .sample3 button:hover{
   background-color: pink;
 }
+
+@media(max-width: 768px){
+  .items-1{
+    display:flex;
+    min-width: 100%;
+  }
+  .items-1 img{
+    min-width: 40px;
+    min-height: 40px;
+  }
+  .items-2{
+    display:flex;
+    min-width: 100%;
+  }
+  .edititem,.additem,.deleteitem{
+    display: flex;
+    margin-left: 10px;
+    min-height: 50px;
+    display:none;
+  }
+}
