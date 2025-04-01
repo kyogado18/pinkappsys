@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const item3 = document.getElementById("item-3");
 
     buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            loadDashboard();
-        });
+        button.addEventListener("click",  loadDashboard());
     });
 
     function loadDashboard() {
