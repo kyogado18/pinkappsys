@@ -23,6 +23,13 @@ body{
     font-size: 30px;
     border: 2px solid transparent;
     border-radius: 20px;
+    transition: 0.2s ease;
+}
+.active{
+    background: pink !important;
+}
+.category-container button:hover{
+    background: pink;
 }
 .designs-container{
     background: white;

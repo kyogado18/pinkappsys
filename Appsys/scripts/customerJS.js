@@ -486,31 +486,213 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("change-container").innerHTML=`
         <div class="main-container">
     <div class="category-container">
-      <button id="hot">Hot</button>
-      <button id="new">New</button>
-      <button id="my">My Designs</button>
+      <button class="nav-designs-button" id="hot">Hot</button>
+      <button class="nav-designs-button" id="new">New</button>
+      <button class="nav-designs-button" id="my">My Designs</button>
     </div>
     <div class="subTitle1" id="subTitle1">
       <div>Hot Designs🔥</div>
       <img src="../images/sampleimg.png" alt="">
     </div>
-    <div class="subTitle2" id="subTitle2"></div>
+    <div class="allDesigns-container" id="subTitle2"></div>
   </div>`
         hotdesign()
+        const buttons = document.querySelectorAll(".nav-designs-button");
+        buttons.forEach(button =>{
+            button.addEventListener("click", function(){
+                // Remove 'active' class from all buttons
+                buttons.forEach(btn => btn.classList.remove("active"));
+
+                // Add 'active' class only to the clicked button
+                button.classList.add("active");
+            })
+        })
     }
     function hotdesign(){
         document.getElementById("subTitle1").innerHTML=`
             <div>Hot Designs🔥</div>
             <img src="../images/sampleimg.png" alt="">`;
         document.getElementById("subTitle2").innerHTML=`
-        <div class="customerhot-container"></div>`
+        <div class="customerhot-container">
+        <div class="hotDesigns-container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimg.png" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Yellow Gaming Sports Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage2.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Red Football Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage3.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black, White, and Red Stripe Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage4.jpg" alt="" class="card-image">
+                <h2 class="card-title">Golden State Warriors Style Jersey</h2>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </div>
+      
+      <div class="hotDesigns-container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimg.png" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Yellow Gaming Sports Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage2.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Red Football Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage3.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black, White, and Red Stripe Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage4.jpg" alt="" class="card-image">
+                <h2 class="card-title">Golden State Warriors Style Jersey</h2>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </div>
+      
+      
+           
+           
+          
+      </div>`;
+        new Swiper('.card-wrapper', {
+            loop: true,
+            spaceBetween: 30,
+            pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: { 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+
     }
     function newdesign(){
         document.getElementById("subTitle1").innerHTML=`
         <div>New Design</div>
         <img src="../images/sampleimg.png" alt="">`;
         document.getElementById("subTitle2").innerHTML=`
-        <div class="customerNewOrder-container">ge</div>`
+        <div class="customerNewOrder-container">
+            <div class="newDesigns-container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimg.png" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Yellow Gaming Sports Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage2.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Red Football Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage3.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black, White, and Red Stripe Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage4.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Golden State Warriors Style Jersey</h2>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </div>
+      
+      <div class="newDesigns-container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimg.png" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Yellow Gaming Sports Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage2.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Red Football Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage3.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black, White, and Red Stripe Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage4.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Golden State Warriors Style Jersey</h2>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </div>
+        </div>`;
+
+        new Swiper('.card-wrapper', {
+            loop: true,
+            spaceBetween: 30,
+            pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: { 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+
     }
     function mydesign(){
         document.getElementById("subTitle1").innerHTML=`
