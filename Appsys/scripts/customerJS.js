@@ -229,6 +229,10 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             addadesign()
         }
+        if(event.target.closest(".customize-design-button")){
+            event.preventDefault();
+            addadesign()
+        }
     });
 
     function loadHome() {
@@ -475,156 +479,249 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("cancel").addEventListener("click", loadHome);
         document.getElementById("back-button").addEventListener("click",loadHome);
     }
-        document.getElementById("order").addEventListener("click", function () {
-            document.getElementById("title").innerHTML = `
-        <div>Orders</div>
-        <img src="../images/logo.png" alt="">`;
-            document.getElementById("change-container").innerHTML = `
-        <div class="completed-container">
-        <div class="title-sort-container">
-            <div class="title">Completed</div>
-            <div class="sort">
-                <select name="" id="">
-                    <option value="asd">Order No.#</option>
-                    <option value="asd">Description</option>
-                    <option value="asd">Quantity</option>
-                    <option value="asd">Payment Method</option>
-                    <option value="asd">Amount Paid</option>
-                </select>
-                <button>Sort</button>
-            </div>
-        </div>
-        <div class="completed-orders-container">
-            <div class="completed-orders-column">
-                <p class="column-order-no">Order No.#</p>
-                <p class="column-order-image">Image</p>
-                <p class="column-order-description">Description</p>
-                <p class="column-order-quantity">Quantity</p>
-                <p class="column-order-payment">Payment Method</p>
-                <p class="column-order-amount">Total Amount Paid</p>
-            </div>
-            <hr>
-            <div class="completed-orders">
-                <div class="orders">
-                    <div class="order-no">1</div>
-                    <div class="order-image"></div>
-                    <div class="order-description">Black and Yellow Gaming sports Jersey</div>
-                    <div class="order-quantity">10</div>
-                    <div class="order-payment">Self-Pickup</div>
-                    <div class="order-amount">5000.00</div>
-                </div>
-                <div class="orders">
-                    <div class="order-no">2</div>
-                    <div class="order-image"></div>
-                    <div class="order-description">Black and Yellow Gaming sports Jersey</div>
-                    <div class="order-quantity">10</div>
-                    <div class="order-payment">COD</div>
-                    <div class="order-amount">5100.00</div>
-                </div>
-                <div class="orders">
-                    <div class="order-no">3</div>
-                    <div class="order-image"></div>
-                    <div class="order-description">Black and Yellow Gaming sports Jersey</div>
-                    <div class="order-quantity">10</div>
-                    <div class="order-payment">COD</div>
-                    <div class="order-amount">5100.00</div>
-                </div>
-                <div class="orders">
-                    <div class="order-no">4</div>
-                    <div class="order-image"></div>
-                    <div class="order-description">Black and Yellow Gaming sports Jersey</div>
-                    <div class="order-quantity">10</div>
-                    <div class="order-payment">COD</div>
-                    <div class="order-amount">5100.00</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="pending-container">
-        <div class="title-sort-container">
-            <div class="title">Pending</div>
-            <div class="sort">
-                <select name="">
-                    <option value="asd">Order No.#</option>
-                    <option value="asd">Description</option>
-                    <option value="asd">Quantity</option>
-                    <option value="asd">Payment Method</option>
-                    <option value="asd">Amount Paid</option>
-                </select>
-                <button>Sort</button>
-            </div>
-        </div>
-        <div class="pending-orders-container">
-            <div class="pending-orders-column">
-                <p class="column-order-no">Order No.#</p>
-                <p class="column-order-image">Image</p>
-                <p class="column-order-description">Description</p>
-                <p class="column-order-quantity">Quantity</p>
-                <p class="column-order-payment">Payment Method</p>
-                <p class="column-order-amount">Amount to Pay</p>
-            </div>
-            <hr>
-            <div class="pending-orders">
-                <div class="orders">
-                    <div class="order-no">5</div>
-                    <div class="order-image"></div>
-                    <div class="order-description">Black and Yellow Gaming sports Jersey</div>
-                    <div class="order-quantity">10</div>
-                    <div class="order-payment">Self-Pickup</div>
-                    <div class="order-amount">5000.00</div>
-                </div>
-                <div class="orders">
-                    <div class="order-no">6</div>
-                    <div class="order-image"></div>
-                    <div class="order-description">Black and Yellow Gaming sports Jersey</div>
-                    <div class="order-quantity">10</div>
-                    <div class="order-payment">COD</div>
-                    <div class="order-amount">5100.00</div>
-                </div>
-                <div class="orders">
-                    <div class="order-no">7</div>
-                    <div class="order-image"></div>
-                    <div class="order-description">Black and Yellow Gaming sports Jersey</div>
-                    <div class="order-quantity">10</div>
-                    <div class="order-payment">COD</div>
-                    <div class="order-amount">5100.00</div>
-                </div>
-                <div class="orders">
-                    <div class="order-no">8</div>
-                    <div class="order-image"></div>
-                    <div class="order-description">Black and Yellow Gaming sports Jersey</div>
-                    <div class="order-quantity">10</div>
-                    <div class="order-payment">COD</div>
-                    <div class="order-amount">5100.00</div>
-                </div>
-            </div>
-        </div>
-    </div>`
-        })
-
-        document.getElementById("design").addEventListener("click", function(){
-            document.getElementById("title").innerHTML=`
+    function loaddesign(){
+        document.getElementById("title").innerHTML=`
             <div>Design</div>
             <img src="../images/logo.png" alt="">`;
-            document.getElementById("change-container").innerHTML=`
+        document.getElementById("change-container").innerHTML=`
         <div class="main-container">
     <div class="category-container">
-      <button>Hot</button>
-      <button>New</button>
-      <button>My Designs</button>
+      <button class="nav-designs-button" id="hot">Hot</button>
+      <button class="nav-designs-button" id="new">New</button>
+      <button class="nav-designs-button" id="my">My Designs</button>
     </div>
-    <div class="subTitle1">
+    <div class="subTitle1" id="subTitle1">
       <div>Hot Designs🔥</div>
       <img src="../images/sampleimg.png" alt="">
     </div>
+    <div class="allDesigns-container" id="subTitle2"></div>
   </div>`
+        hotdesign()
+        const buttons = document.querySelectorAll(".nav-designs-button");
+        buttons.forEach(button =>{
+            button.addEventListener("click", function(){
+                // Remove 'active' class from all buttons
+                buttons.forEach(btn => btn.classList.remove("active"));
+
+                // Add 'active' class only to the clicked button
+                button.classList.add("active");
+            })
         })
+    }
+    function hotdesign(){
+        document.getElementById("subTitle1").innerHTML=`
+            <div>Hot Designs🔥</div>
+            <img src="../images/sampleimg.png" alt="">`;
+        document.getElementById("subTitle2").innerHTML=`
+        <div class="customerhot-container">
+        <div class="hotDesigns-container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimg.png" alt="" class="card-image">
 
+                <h2 class="card-title">Black and Yellow Gaming Sports Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage2.jpg" alt="" class="card-image">
 
-    document.getElementById("add").addEventListener("click", function(){
-        document.getElementById("title").innerHTML=`
+                <h2 class="card-title">Black and Red Football Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage3.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black, White, and Red Stripe Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage4.jpg" alt="" class="card-image">
+                <h2 class="card-title">Golden State Warriors Style Jersey</h2>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </div>
+      
+      <div class="hotDesigns-container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimg.png" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Yellow Gaming Sports Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage2.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Red Football Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage3.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black, White, and Red Stripe Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage4.jpg" alt="" class="card-image">
+                <h2 class="card-title">Golden State Warriors Style Jersey</h2>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </div>
+      
+      
+           
+           
+          
+      </div>`;
+        new Swiper('.card-wrapper', {
+            loop: true,
+            spaceBetween: 30,
+            pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: { 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+
+    }
+    function newdesign(){
+        document.getElementById("subTitle1").innerHTML=`
+        <div>New Design</div>
+        <img src="../images/sampleimg.png" alt="">`;
+        document.getElementById("subTitle2").innerHTML=`
+        <div class="customerNewOrder-container">
+            <div class="newDesigns-container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimg.png" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Yellow Gaming Sports Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage2.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Red Football Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage3.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black, White, and Red Stripe Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage4.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Golden State Warriors Style Jersey</h2>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </div>
+      
+      <div class="newDesigns-container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimg.png" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Yellow Gaming Sports Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage2.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black and Red Football Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage3.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Black, White, and Red Stripe Jersey</h2>
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="" class="card-link">
+                <img src="../images/sampleimage4.jpg" alt="" class="card-image">
+
+                <h2 class="card-title">Golden State Warriors Style Jersey</h2>
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </div>
+        </div>`;
+
+        new Swiper('.card-wrapper', {
+            loop: true,
+            spaceBetween: 30,
+            pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: { 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+
+    }
+    function mydesign(){
+        document.getElementById("subTitle1").innerHTML=`
+        <div>My Design</div>
+        <img src="../images/sampleimg.png" alt="">`
+        document.getElementById("subTitle2").innerHTML=`
+        <div class="customermyorder-container"></div>`
+    }
+
+        document.getElementById("design").addEventListener("click", loaddesign)
+        document.addEventListener("click", function (event) {
+            if (event.target.closest("#hot")) {
+                event.preventDefault();
+                hotdesign()
+            }
+            if(event.target.closest("#new")){
+                event.preventDefault();
+                newdesign();
+            }
+            if(event.target.closest("#my")){
+                event.preventDefault();
+                mydesign();
+            }
+        });
+
+function addadesign(){
+    document.getElementById("title").innerHTML=`
         <div>Add Design</div>>`;
-        document.getElementById("change-container").innerHTML=`
+    document.getElementById("change-container").innerHTML=`
         <div class="completed-container">
         <div class="subTitle1">
             <div>Add A Design</div>
@@ -686,7 +783,231 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </div>`
-        document.getElementById("submit").addEventListener("click", loadHome);
-        document.getElementById("cancel").addEventListener("click", loadHome);
-    })
+    document.getElementById("submit").addEventListener("click", loadHome);
+    document.getElementById("cancel").addEventListener("click", loadHome);
+}
+
+    document.getElementById("add").addEventListener("click", addadesign);
+    document.getElementById("order").addEventListener("click", loadorders);
+    document.addEventListener("click", function (event) {
+        if (event.target.closest("#sortButton")) {
+            const selectedOption = document.getElementById('sortOptions');
+            if (selectedOption) {
+                sortTable(selectedOption.value);
+            }
+        }
+        if (event.target.closest("#sortButton1")) {
+            const selectedOption = document.getElementById('sortOptions1');
+            if (selectedOption) {
+                sortTable1(selectedOption.value);
+            }
+        }
+    });
+
+    function loadorders(){
+        document.getElementById("title").innerHTML = `
+                <div>Orders</div>
+                <img src="../images/logo.png" alt="">`;
+        document.getElementById("change-container").innerHTML = `
+                <div class="completed-container">
+        <div class="title-sort-container">
+            <div class="title">Completed</div>
+            <div class="sort">
+                <select id="sortOptions1">
+                    <option value="Order No.">Order No.#</option>
+                    <option value="Description">Description</option>
+                    <option value="Quantity">Quantity</option>
+                    <option value="Payment">Payment Method</option>
+                    <option value="Amount">Amount Paid</option>
+                </select>
+                <button id="sortButton1">Sort</button>
+            </div>
+        </div>
+        <div class="completed-orders-container table1">
+            <div class="completed-orders-column row1 header1">
+                <p class="column-order-no cell1" data-column="Order No.">Order No.#</p>
+                <p class="column-order-image cell1" data-column="Image">Image</p>
+                <p class="column-order-description cell1" data-column="Description">Description</p>
+                <p class="column-order-quantity cell1" data-column="Quantity">Quantity</p>
+                <p class="column-order-payment cell1" data-column="Payment">Payment Method</p>
+                <p class="column-order-amount cell1" data-column="Amount">Total Amount Paid</p>
+            </div>
+            <div class="completed-orders">
+                <div class="orders row1">
+                    <div class="order-no cell1" data-column="Order No.">1</div>
+                    <div class="order-image cell1" data-column="Image"></div>
+                    <div class="order-description cell1" data-column="Description">Black and Yellow Gaming sports Jersey</div>
+                    <div class="order-quantity cell1" data-column="Quantity">10</div>
+                    <div class="order-payment cell1" data-column="Payment">Self-Pickup</div>
+                    <div class="order-amount cell1" data-column="Amount">5000.00</div>
+                </div>
+                <div class="orders row1">
+                    <div class="order-no cell1" data-column="Order No.">2</div>
+                    <div class="order-image cell1" data-column="Image"></div>
+                    <div class="order-description cell1" data-column="Description">Black and Yellow Gaming sports Jersey</div>
+                    <div class="order-quantity cell1" data-column="Quantity">10</div>
+                    <div class="order-payment cell1" data-column="Payment">COD</div>
+                    <div class="order-amount cell1" data-column="Amount">5100.00</div>
+                </div>
+                <div class="orders row1">
+                    <div class="order-no cell1" data-column="Order No.">3</div>
+                    <div class="order-image cell1" data-column="Image"></div>
+                    <div class="order-description cell1" data-column="Description">Black and Yellow Gaming sports Jersey</div>
+                    <div class="order-quantity cell1" data-column="Quantity">10</div>
+                    <div class="order-payment cell1" data-column="Payment">COD</div>
+                    <div class="order-amount cell1" data-column="Amount">5100.00</div>
+                </div>
+                <div class="orders row1">
+                    <div class="order-no cell1" data-column="Order No.">4</div>
+                    <div class="order-image cell1" data-column="Image"></div>
+                    <div class="order-description cell1" data-column="Description">Black and Yellow Gaming sports Jersey</div>
+                    <div class="order-quantity cell1" data-column="Quantity">10</div>
+                    <div class="order-payment cell1" data-column="Payment">COD</div>
+                    <div class="order-amount cell1" data-column="Amount">5100.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pending-container">
+        <div class="title-sort-container">
+            <div class="title">Pending</div>
+            <div class="sort">
+                <select id="sortOptions">
+                    <option value="Order No.">Order No.#</option>
+                    <option value="Description">Description</option>
+                    <option value="Quantity">Quantity</option>
+                    <option value="Payment">Payment Method</option>
+                    <option value="Amount">Amount Paid</option>
+                </select>
+                <button id="sortButton">Sort</button>
+            </div>
+        </div>
+        <div class="pending-orders-container table">
+            <div class="pending-orders-column row header">
+                <p class="column-order-no cell" data-column="Order No.">Order No.#</p>
+                <p class="column-order-image cell" data-column="Image">Image</p>
+                <p class="column-order-description cell" data-column="Description">Description</p>
+                <p class="column-order-quantity cell" data-column="Quantity">Quantity</p>
+                <p class="column-order-payment cell" data-column="Payment">Payment Method</p>
+                <p class="column-order-amount cell" data-column="Amount">Amount to Pay</p>
+            </div>
+            <div class="pending-orders">
+                <div class="orders row">
+                    <div class="order-no cell" data-column="Order No.">5</div>
+                    <div class="order-image cell" data-column="Image"></div>
+                    <div class="order-description cell" data-column="Description">Black and Yellow Gaming sports Jersey</div>
+                    <div class="order-quantity cell" data-column="Quantity">10</div>
+                    <div class="order-payment cell" data-column="Payment">Self-Pickup</div>
+                    <div class="order-amount cell" data-column="Amount">5000.00</div>
+                </div>
+                <div class="orders row">
+                    <div class="order-no cell" data-column="Order No.">6</div>
+                    <div class="order-image cell" data-column="Image"></div>
+                    <div class="order-description cell" data-column="Description">Black and Yellow Gaming sports Jersey</div>
+                    <div class="order-quantity cell" data-column="Quantity">10</div>
+                    <div class="order-payment cell" data-column="Payment">COD</div>
+                    <div class="order-amount cell" data-column="Amount">5100.00</div>
+                </div>
+                <div class="orders row">
+                    <div class="order-no cell" data-column="Order No.">7</div>
+                    <div class="order-image cell" data-column="Image"></div>
+                    <div class="order-description cell" data-column="Description">Black and Yellow Gaming sports Jersey</div>
+                    <div class="order-quantity cell" data-column="Quantity">10</div>
+                    <div class="order-payment cell" data-column="Payment">COD</div>
+                    <div class="order-amount cell" data-column="Amount">5100.00</div>
+                </div>
+                <div class="orders row">
+                    <div class="order-no cell" data-column="Order No.">8</div>
+                    <div class="order-image cell" data-column="Image"></div>
+                    <div class="order-description cell" data-column="Description">Black and Yellow Gaming sports Jersey</div>
+                    <div class="order-quantity cell" data-column="Quantity">10</div>
+                    <div class="order-payment cell" data-column="Payment">COD</div>
+                    <div class="order-amount cell" data-column="Amount">5100.00</div>
+                </div>
+            </div>
+        </div>
+    </div>`
+    }
+    function sortTable(column) {
+        const table = document.querySelector('.table');
+        const header = table.querySelector('.header');
+        const rows = Array.from(table.querySelectorAll('.row:not(.header)'));
+
+        const sortedRows = rows.sort((a, b) => {
+            const aCell = a.querySelector(`.cell[data-column="${column}"]`);
+            const bCell = b.querySelector(`.cell[data-column="${column}"]`);
+
+            if (!aCell || !bCell) {
+                console.error('Cell not found for column:', column);
+                return 0;
+            }
+
+            const aText = aCell.textContent.trim();
+            const bText = bCell.textContent.trim();
+            const aIsNumeric = !isNaN(Number(aText));
+            const bIsNumeric = !isNaN(Number(bText));
+
+            // Determine if the column is numeric or string
+            if (column === 'Order No.') {
+                return Number(aText) - Number(bText); // Numeric comparison for age
+            }else if(column === 'Quantity'){
+                return Number(aText) - Number(bText);
+            } else {
+                return aText.localeCompare(bText); // String comparison for name and country
+            }
+        });
+
+        // Clear the table and append sorted rows
+        // Instead of appending, we will insert before the header
+        sortedRows.forEach(row => {
+            table.insertBefore(row, header.nextSibling);
+            table.style.overflow = 'auto';
+            header.style.position = 'sticky';
+            header.style.zIndex = '1';
+            header.style.top = '0';
+            header.style.background = 'white';
+            header.style.borderBottom = '1px solid black'
+            // Insert after the header
+        });
+
+    }
+    function sortTable1(column) {
+        const table1 = document.querySelector('.table1');
+        const header1 = table1.querySelector('.header1');
+        const rows1 = Array.from(table1.querySelectorAll('.row1:not(.header1)'));
+
+        const sortedRows = rows1.sort((a, b) => {
+            const aCell = a.querySelector(`.cell1[data-column="${column}"]`);
+            const bCell = b.querySelector(`.cell1[data-column="${column}"]`);
+
+            if (!aCell || !bCell) {
+                console.error('Cell not found for column:', column);
+                return 0; // Skip sorting if cell is not found
+            }
+
+            const aText = aCell.textContent.trim();
+            const bText = bCell.textContent.trim();
+
+            // Determine if the column is numeric or string
+            if (column === 'Order No.' || column === 'Quantity') {
+                return Number(aText) - Number(bText); // Numeric comparison for age
+            } else {
+                return aText.localeCompare(bText); // String comparison for name and country
+            }
+        });
+
+        // Clear the table and append sorted rows
+        // Instead of appending, we will insert before the header
+        sortedRows.forEach(row => {
+            table1.insertBefore(row, header1.nextSibling);
+            table1.style.overflow = 'auto';
+            header1.style.position = 'sticky';
+            header1.style.zIndex = '1';
+            header1.style.top = '0';
+            header1.style.background = 'white';
+            header1.style.borderBottom = '1px solid black'
+            // Insert after the header
+        });
+
+    }
 })

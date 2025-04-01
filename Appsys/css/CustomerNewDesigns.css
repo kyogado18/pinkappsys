@@ -23,6 +23,13 @@ body{
     font-size: 30px;
     border: 2px solid transparent;
     border-radius: 20px;
+    transition: 0.2s ease;
+}
+.active{
+    background: pink !important;
+}
+.category-container button:hover{
+    background: pink;
 }
 .designs-container{
     background: white;
@@ -44,4 +51,7 @@ body{
 .subTitle1 img{
     opacity: 66%;
     width: 400px;
+}
+.subTitle2{
+    background:transparent;
 }
