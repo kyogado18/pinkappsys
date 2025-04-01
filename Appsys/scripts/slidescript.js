@@ -19,7 +19,7 @@ new Swiper('.card-wrapper', {
             slidesPerView: 1
         },
         768:{
-          slidesPerView: 2
+            slidesPerView: 2
         },
         1024:{
             slidesPerView: 3
@@ -28,44 +28,11 @@ new Swiper('.card-wrapper', {
 
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const addbutton = document.querySelector(".material-symbols-outlined")
-    const bg = document.querySelector(".main-container");
-    const cart = document.querySelector(".addtocart");
-    const reject = document.querySelector(".buttoncart button");
-    const overlay = document.querySelector(".overlay");
-    const confirm = document.querySelector(".confirm");
-    const reject1 = document.querySelector(".view button");
-    const accept = document.querySelector(".accept");
 
-    accept.addEventListener("click", function () {
-        overlay.style.display = "none";
-        bg.style.filter="blur(0)";
-    })
 
-    confirm.addEventListener("click", function () {
-        cart.style.display = "none";
-        overlay.style.display = "grid";
-        reject.addEventListener("click", function (event) {
-            cart.style.display = "none";
-            bg.style.filter="blur(0)";
-        })
-    })
-
-    reject1.addEventListener("click", function () {
-        overlay.style.display = "none";
-        bg.style.filter="blur(0)";
-
-    })
-
-    addbutton.addEventListener("click", function (){
-        cart.style.display = "grid";
-        bg.style.filter="blur(10px)";
-    })
-
-    reject.addEventListener("click", function (){
-        cart.style.display = "none";
-        bg.style.filter="blur(0)";
-    })
-
-})
+function toggleMenu() {
+    const menu = document.querySelector(".buttonsNav");
+    menu.classList.toggle("active");
+    const nav = document.querySelector(".nav");
+    nav.classList.toggle("expanded");
+}

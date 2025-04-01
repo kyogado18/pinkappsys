@@ -9,22 +9,24 @@
 </head>
 <body>
     <div class="image"></div>
-    <div class="rectangle-a"><div class="image-b"></div></div>
-    <div class="card">
-        <div class="card-overlay"></div>
-        <div class="content">
-            <h2>login</h2>
-            <div class="input-group">
-                <input type="email" name="" id="username" placeholder="Email Address">
-                <i class="fa-solid fa-envelope"></i>
+    <div class="login-container">
+        <div class="card">
+            <div class="card-overlay"></div>
+            <div class="content">
+                <h2>login</h2>
+                <div class="input-group">
+                    <input type="email" name="" id="username" placeholder="Email Address">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" name="" id="password">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button onclick="login()">Login</button>
+                <p>Don't have an account? <a href="registerlogin.html">Create now</a></p>
             </div>
-            <div class="input-group">
-                <input type="password" placeholder="Password" name="" id="password">
-                <i class="fa-solid fa-lock"></i>
-            </div>
-            <button onclick="login()">Login</button>
-            <p>Don't have an account? <a href="registerlogin.html">Create now</a></p>
         </div>
+        <div class="rectangle-a"><div class="image-b"></div></div>
     </div>
     <script src="../scripts/login.js"></script>
 </body>

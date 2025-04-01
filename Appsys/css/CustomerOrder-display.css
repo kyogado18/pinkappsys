@@ -180,3 +180,29 @@ body{
     border-color: #FFA1A1;
 }
 
+@media screen and (max-width: 768px) {
+    .completed-container{
+        padding: 10px 10px;
+    }
+    .title-sort-container .title{
+        font-size: 20px;
+    }
+    .title-sort-container .sort{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: end;
+    }
+    .sort{
+        justify-content: end;
+    }
+    .title-sort-container .sort select{
+        padding: 10px 20px;
+    }
+    .pending-container{
+        padding: 10px 10px;
+    }
+    .completed-orders-container .completed-orders-column{
+        gap:10px;
+        text-align: center;
+    }
+}
