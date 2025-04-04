@@ -5,44 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../../css/dashboard/dashboarddisplay.css">
+    <link rel="stylesheet" href="../../css/products/products.css">
+    <link rel="stylesheet" href="../../css/orders/orders.css">
+    <link rel="stylesheet" href="../../css/reports/reports.css">
     <script src="../../javascript/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <div class="item-1">
-        <img src="../../images/profile.jpg" >
-        <div class="admintext">
-            <h4>ADMIN</h4>
-            <p>Administrator</p>
-        </div>
-    </div>
+    <header>
+        <img src="../../images/profile.jpg" alt="">
+        <h2>Admin</h2>
+        <h4>Administrator</h4>
+    </header>
+    <aside>
+        <button id="buttondashboard">
+            <span>Dashboard</span>
+        </button>
 
-    <div class="item-2">
-        <div class="item-2-1">
-            <button id="buttondashboard" class="buttondashboard"><span>Dashboard</span></button>
-            <button id="buttonproduct" class="buttonproduct"><span>Products</span></button>
-            <button id="buttonorder" class="buttonorder"><span>Orders</span></button>
-            <button id="buttonreport" class="buttonreport"><span>Reports</span></button>
-            <button id="buttonlog-out" class="buttonlog-out"><a href="../../../../htmls/login.html"><span>Log out</span></a></button>
-        </div>
-    </div>
+        <button id="buttonproduct">
+            <span>Products</span>
+        </button>
 
-    <div class="item-3" id="item-3">
-        <div class="item-03" id="item-03"></div>
-    </div>
+        <button id="buttonorder">
+            <span>Orders</span>
+        </button>
+
+        <button id="buttonreport">
+            <span>Reports</span>
+        </button>
+
+        <button id="buttonlog-out">
+            <a href="../../../../htmls/login.html"><span>Log out</span></a>
+        </button>
+    </aside>
+    <article id="content">content</article>
+    <footer></footer>
 </div>
-
-<!-- Navbar for mobile screens -->
-<div class="navbar">
-    <button id="buttondashboard" class="buttondashboard"><span>Dashboard</span></button>
-    <button id="buttonproduct" class="buttonproduct"><span>Products</span></button>
-    <button id="buttonorder" class="buttonorder"><span>Orders</span></button>
-    <button id="buttonreport" class="buttonreport"><span>Reports</span></button>
-    <button id="buttonlog-out" class="buttonlog-out"><a href="../../../../htmls/login.html"><span>Log out</span></a></button>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
-<script src="../../javascript/chart1.js"></script>
-<script src="../../javascript/chart2.js"></script>
 </body>
 </html>

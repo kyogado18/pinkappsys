@@ -1,110 +1,89 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll("#buttondashboard, #nav-dashboard");
-    const item3 = document.getElementById("item-3");
+    document.getElementById("buttondashboard").addEventListener("click", function () {
+        fetch("../dashboard/dashboarddisplay.html")
+            .then((res) => res.text())
+            .then((html) => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, "text/html");
+                const dashboardContent = doc.querySelector(".dashboardcontainer");
 
-    buttons.forEach(button => {
-        button.addEventListener("click",  loadDashboard());
+                const content = document.getElementById("content");
+                content.innerHTML = "";
+                content.appendChild(dashboardContent);
+
+                // Load charts after DOM is updated
+                loadCharts();
+            })
+            .catch((err) => console.error("Failed to load dashboard content:", err));
     });
 
-    function loadDashboard() {
-        fetch("../dashboard/dashboarddisplay.html")
-            .then(response => response.text())
-            .then(data => {
-                const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = data;
-                const extractedContent = tempDiv.querySelector(".container");
-
-                if (extractedContent) {
-                    item3.innerHTML = "";
-                    while (extractedContent.firstChild) {
-                        item3.appendChild(extractedContent.firstChild);
-                    }
-                } else {
-                    item3.innerHTML = data;
-                }
-
-                item3.style.opacity = "1";
-                item3.style.display = "grid";
-
-                setTimeout(loadCharts, 100);
-            })
-            .catch(error => console.error("Error loading the content:", error));
-    }
-
     function loadCharts() {
-        ["barchart", "doughnut"].forEach(chartId => {
-            const canvas = document.getElementById(chartId);
-            if (canvas) {
-                const ctx = canvas.getContext('2d');
-                new Chart(ctx, {
-                    type: chartId === "barchart" ? 'bar' : 'doughnut',
-                    data: {
-                        labels: [
-                            'Black and Yellow Gaming Sports Jersey',
-                            'Black and Red Football Jersey',
-                            'Black, Red, and White Stripe Basketball Jersey',
-                            'Golden State Warriors Style Jersey'
-                        ],
-                        datasets: [{
-                            label: 'Sales performance over month',
-                            data: [12, 19, 3, 5],
-                            borderWidth: 1,
-                            backgroundColor: [
-                                'rgba(237, 224, 0, 1)',
-                                'rgba(255, 106, 13, 1)',
-                                'rgba(149, 6, 6, 1)',
-                                'rgba(42, 64, 229, 1)'
-                            ]
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: { beginAtZero: true }
-                        }
+        const barchart = document.getElementById("barchart");
+        const doughnut = document.getElementById("doughnut");
+
+        if (barchart) {
+            new Chart(barchart.getContext("2d"), {
+                type: "bar",
+                data: {
+                    labels: ['Product A', 'Product B', 'Product C'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [12, 19, 3],
+                        backgroundColor: ['red', 'blue', 'green']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true }
                     }
-                });
-            } else {
-                console.error(`Canvas element '${chartId}' not found!`);
-            }
-        });
+                }
+            });
+        }
+
+        if (doughnut) {
+            new Chart(doughnut.getContext("2d"), {
+                type: "doughnut",
+                data: {
+                    labels: ['Red', 'Blue', 'Green'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [10, 20, 30],
+                        backgroundColor: ['red', 'blue', 'green']
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        }
     }
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
-    const buttonOrder = document.querySelectorAll("#buttonproduct, #nav-products");
-    const item3 = document.getElementById("item-3");
-
-    buttonOrder.forEach(button => {
-        button.addEventListener("click", function () {
-            loadproducts()
-        })
-    })
-    function loadproducts(){
+    document.getElementById("buttonproduct").addEventListener("click", function () {
         fetch("../products/products.html")
-            .then(response => response.text())
-            .then(data => {
-                const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = data;
-                const extractedContent = tempDiv.querySelector(".container");
+            .then((res) => res.text())
+            .then((html) => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, "text/html");
 
-                if (extractedContent) {
-                    item3.innerHTML = "";
-                    console.log("ahah")
-                    while (extractedContent.firstChild) {
-                        item3.appendChild(extractedContent.firstChild);
-                    }
+                // Check if the content is loaded properly
+                console.log(doc);
+
+                const dashboardContent = doc.querySelector(".productcontainer");
+
+                if (dashboardContent) {
+                    const content = document.getElementById("content");
+                    content.innerHTML = "";
+                    content.appendChild(dashboardContent);
+                    optionitem();
                 } else {
-                    item3.innerHTML = data;
-                    console.log("se")
+                    console.error("The element .productscontainer was not found.");
                 }
-
-                item3.style.opacity = "1";
-                item3.style.display = "grid";
-                optionitem()
             })
-            .catch(error => console.error("Error loading the content:", error));
-    }
+            .catch((err) => console.error("Failed to load dashboard content:", err));
+    });
     function optionitem(){
         const additem = document.querySelector(".addbutton")
         const deleteitem = document.querySelector(".deletebutton");
@@ -162,39 +141,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //
 document.addEventListener("DOMContentLoaded", function () {
-    const buttonOrder = document.querySelectorAll("#buttonorder,#nav-orders");
-    const item3 = document.getElementById("item-3");
+    document.getElementById("buttonorder").addEventListener("click", function () {
+        fetch("../orders/orders.html")
+            .then((res) => res.text())
+            .then((html) => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, "text/html");
 
-    buttonOrder.forEach(button => {
-        button.addEventListener("click", function () {
-            loadorders()
-        })
-    })
-    function loadorders(){
-        fetch("../Orders/orders.html")
-            .then(response => response.text())
-            .then(data => {
-                const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = data;
-                const extractedContent = tempDiv.querySelector(".container");
+                // Check if the content is loaded properly
+                console.log(doc);
 
-                if (extractedContent) {
-                    item3.innerHTML = "";
-                    while (extractedContent.firstChild) {
-                        item3.appendChild(extractedContent.firstChild);
-                    }
+                const dashboardContent = doc.querySelector(".ordercontainer");
+
+                if (dashboardContent) {
+                    const content = document.getElementById("content");
+                    content.innerHTML = "";
+                    content.appendChild(dashboardContent);
+                    attachOverlayEvents()
                 } else {
-                    item3.innerHTML = data;
+                    console.error("The element .productscontainer was not found.");
                 }
-
-                item3.style.opacity = "1";
-                item3.style.display = "grid"; // Ensure it's visible
-
-                // Attach overlay events after loading content
-                attachOverlayEvents();
             })
-            .catch(error => console.error("Error loading the content:", error));
-    }
+            .catch((err) => console.error("Failed to load dashboard content:", err));
+    });
 
     function attachOverlayEvents() {
         const orderButton = document.querySelector(".item-5-5");
@@ -223,36 +192,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //
 document.addEventListener("DOMContentLoaded", function () {
-    const buttonOrder = document.querySelectorAll("#buttonreport,#nav-reports");
-    const item3 = document.getElementById("item-3");
-
-    buttonOrder.forEach(button => {
-        button.addEventListener("click", function () {
-            loadreports()
-        })
-    })
-    function loadreports() {
+    document.getElementById("buttonreport").addEventListener("click", function () {
         fetch("../reports/reports.html")
-            .then(response => response.text())
-            .then(data => {
-                const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = data;
-                const extractedContent = tempDiv.querySelector(".container");
+            .then((res) => res.text())
+            .then((html) => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, "text/html");
 
-                if (extractedContent) {
-                    item3.innerHTML = "";
-                    while (extractedContent.firstChild) {
-                        item3.appendChild(extractedContent.firstChild);
-                    }
+                console.log(doc);
+
+                const dashboardContent = doc.querySelector(".reportcontainer");
+
+                if (dashboardContent) {
+                    const content = document.getElementById("content");
+                    content.innerHTML = "";
+                    content.appendChild(dashboardContent);
                 } else {
-                    item3.innerHTML = data;
+                    console.error("The element .productscontainer was not found.");
                 }
-
-                item3.style.opacity = "1";
-                item3.style.display = "grid"; // Ensure it's visible
             })
-            .catch(error => console.error("Error loading the content:", error));
-    }
+            .catch((err) => console.error("Failed to load dashboard content:", err));
+    });
 });
 
 
