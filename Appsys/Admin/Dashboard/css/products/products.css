@@ -22,9 +22,9 @@
 .items-1 input{
   font-size: 20px;
   border-radius: 5px;
-}
-.items-1{
-
+  border: none;
+  outline: 0;
+  background: #ffffff;
 }
 .items-2{
   grid-column: 3/4;
@@ -49,11 +49,12 @@
   transition: transform 0.3s ease-in-out;
   filter: blur(0);
   cursor: pointer;
+  gap: 10px;
+  overflow: auto;
 }
 .items-3:hover img {
   filter: blur(4px);
-  background-color: pink;
-  border: 1px solid black;
+  z-index: 10;
 }
 .items-3 img:hover {
   filter: blur(0);
@@ -63,6 +64,14 @@
 .items-2 img{
   width: 25px;
   height: 25px;
+}
+.items-2 button{
+  background: #ffffff;
+  border: none;
+  border-radius:5px;
+}
+.items-2 button:hover{
+  background: pink;
 }
 
 .items-3 img {
@@ -87,6 +96,7 @@
   margin-left: 300px;
   z-index: 999;
   border:1px solid black;
+  position: fixed;
   display: none;
 }
 .reject{
@@ -161,7 +171,6 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: #ffffff ;
   border-radius: 4px;
   transition: 0.5s;
   pointer-events: none;
@@ -202,6 +211,7 @@
   margin-left: 300px;
   z-index: 999;
   border:1px solid black;
+  position: fixed;
   display: none;
 }
 .sample2 img{
@@ -280,7 +290,6 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: #ffffff ;
   border-radius: 4px;
   transition: 0.5s;
   pointer-events: none;
@@ -291,7 +300,7 @@
 .productid2 input:valid~span, .name2 input:valid~span, .price2 input:valid~span, .category2 input:valid~span,
 .productid2 input:focus~span, .name2 input:focus~span,.price2 input:focus~span, .category2 input:focus~span {
   color: gray;
-  transform: translateX(-10px) translateY(-20px);
+  transform: translateX(-10px) translateY(-30px);
   font-size: 0, 75rem;
 }
 
@@ -320,6 +329,7 @@
   margin-left: 300px;
   z-index: 999;
   border:1px solid black;
+  position: fixed;
   display: none;
 }
 .sample3 img{
@@ -398,7 +408,6 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: #ffffff ;
   border-radius: 4px;
   transition: 0.5s;
   pointer-events: none;
@@ -409,7 +418,7 @@
 .productid3 input:valid~span, .name3 input:valid~span, .price3 input:valid~span, .category3 input:valid~span,
 .productid3 input:focus~span, .name3 input:focus~span,.price3 input:focus~span, .category3 input:focus~span {
   color: gray;
-  transform: translateX(-10px) translateY(-20px);
+  transform: translateX(-10px) translateY(-30px);
   font-size: 0, 75rem;
 }
 

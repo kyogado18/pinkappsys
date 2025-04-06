@@ -60,6 +60,7 @@ body{
     transform: translate(-50%, -50%);
     z-index: 999;
     box-sizing: border-box;
+  display: none;
 }
 
 
@@ -173,8 +174,10 @@ body{
 }
 .footer1-1 .price1{
   grid-column: 3/4;
-  justify-self: end;
-  align-content: center;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: end;
+  align-self: center;
 }
 .footer1 .footer1-2{
   grid-row: 3/4;

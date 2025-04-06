@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("buttondashboard").addEventListener("click", function () {
+    const dashboardbutton = document.getElementById("buttondashboard");
+    if(dashboardbutton){
+        dashboardbutton.addEventListener("click", dashboarddisplay)
+        console.log("no")
+    }
+    dashboarddisplay()
+    function dashboarddisplay(){
         fetch("../dashboard/dashboarddisplay.html")
             .then((res) => res.text())
             .then((html) => {
@@ -10,12 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const content = document.getElementById("content");
                 content.innerHTML = "";
                 content.appendChild(dashboardContent);
-
-                // Load charts after DOM is updated
                 loadCharts();
             })
             .catch((err) => console.error("Failed to load dashboard content:", err));
-    });
+    }
 
     function loadCharts() {
         const barchart = document.getElementById("barchart");
@@ -72,11 +76,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(doc);
 
                 const dashboardContent = doc.querySelector(".productcontainer");
+                const deleteitem = doc.querySelector(".deleteitem");
+                const edititem = doc.querySelector(".edititem");
+                const additem = doc.querySelector(".additem")
 
                 if (dashboardContent) {
                     const content = document.getElementById("content");
                     content.innerHTML = "";
                     content.appendChild(dashboardContent);
+                    content.appendChild(deleteitem);
+                    content.appendChild(edititem);
+                    content.appendChild(additem);
                     optionitem();
                 } else {
                     console.error("The element .productscontainer was not found.");
@@ -105,34 +115,40 @@ document.addEventListener("DOMContentLoaded", function () {
         additem.addEventListener("click", function () {
             add.style.display = "grid";
             productcontainer.style.filter="blur(10px)"
+            productcontainer.style.pointerEvents="none";
         })
 
         close1.addEventListener("click", function () {
             add.style.display = "none";
             productcontainer.style.filter="blur(0)"
+            productcontainer.style.pointerEvents="auto";
         })
 
         edititem.forEach(button => {
             button.addEventListener("click", function () {
                 edit.style.display = "grid";
                 productcontainer.style.filter = "blur(10px)";
+                productcontainer.style.pointerEvents="none";
             });
         });
 
         close2.addEventListener("click", function () {
             edit.style.display = "none";
             productcontainer.style.filter="blur(0)"
+            productcontainer.style.pointerEvents="auto";
         })
 
         deleteitem.addEventListener("click", function () {
             delete2.style.display = "grid";
             productcontainer.style.filter="blur(10px)"
+            productcontainer.style.pointerEvents="none";
 
         })
 
         close3.addEventListener("click", function () {
             delete2.style.display = "none";
             productcontainer.style.filter="blur(0)"
+            productcontainer.style.pointerEvents="auto";
         })
     }
 });
@@ -148,48 +164,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
 
+                console.log(doc);
+
                 const dashboardContent = doc.querySelector(".ordercontainer");
+                const overlay = doc.querySelector(".overlay");
 
                 if (dashboardContent) {
                     const content = document.getElementById("content");
                     content.innerHTML = "";
                     content.appendChild(dashboardContent);
+                    content.appendChild(overlay);
                     attachOverlayEvents()
-                } else {
-                    console.error("❌ The element .ordercontainer was not found.");
+                }
+                else {
+                    console.error("The element .productscontainer was not found.");
                 }
             })
-            .catch((err) => console.error("❌ Failed to load dashboard content:", err));
+            .catch((err) => console.error("Failed to load dashboard content:", err));
     });
+
     function attachOverlayEvents() {
-        const orderButton = document.getElementById("ordercontent");
-        const rejectbutton = document.getElementById("reject01");
-        const overlay = document.getElementById("overlay");
-        const body = document.querySelector(".ordercontainer");
-        orderButton.addEventListener("click", function () {
-
-            console.log(orderButton);
-            console.log(rejectbutton);
-            console.log(overlay);
-            console.log(body);
-
-            if (!orderButton || !overlay) {
-                console.error("❌ Overlay elements not found!");
-                return;
-            }
-
-            orderButton.addEventListener("click", function () {
-                overlay.style.display = "grid";
-                body.style.backgroundColor = "gray";
-                console.log("✅ Overlay opened");
-            });
-
-            closeButton.addEventListener("click", function () {
-                overlay.style.display = "none";
-                body.style.backgroundColor = "white";
-                console.log("✅ Overlay closed");
-            });
+        document.querySelector(".ordercontent").addEventListener("click", function () {
+            document.querySelector(".overlay").style.display = "grid";
+            document.querySelector(".ordercontainer").style.pointerEvents = "none";
+            document.querySelector(".ordercontainer").style.filter = "blur(10px)";
         })
+
+        document.querySelector(".reject01").addEventListener("click", function () {
+            document.querySelector(".overlay").style.display = "none";
+            document.querySelector(".ordercontainer").style.pointerEvents = "auto";
+            document.querySelector(".ordercontainer").style.filter = "blur(0)"
+        })
+
+        document.querySelector(".accept-button").addEventListener("click", function () {
+            document.querySelector(".overlay").style.display = "none";
+            document.querySelector(".ordercontainer").style.pointerEvents = "auto";
+            document.querySelector(".ordercontainer").style.filter = "blur(0)"
+        })
+
     }
 });
 

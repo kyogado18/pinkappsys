@@ -1,14 +1,21 @@
+body{
+  background-image: url(../../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+}
+
 .container{
   display: grid;
   margin:auto;
   gap: 4px;
-  grid-template-rows: .5fr 2fr 2fr .5fr;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-template-areas: "header content content"
-                         "sidebar content content"
-                         "sidebar content content"
-                          "footer content content";
-  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: "header content"
+                         "sidebar content"
+                          "footer content";
+  height: 97vh;
+  overflow:hidden;
 }
 header{
   grid-area: header;
@@ -70,8 +77,8 @@ footer{
 }
 article{
   grid-area: content;
-  height: fit-content;
-  overflow: visible;
+  height: 100%;
+  overflow-y: auto;
 }
 #buttonproduct,
 #buttonorder,
