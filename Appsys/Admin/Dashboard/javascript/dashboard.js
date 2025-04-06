@@ -148,9 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, "text/html");
 
-                // Check if the content is loaded properly
-                console.log(doc);
-
                 const dashboardContent = doc.querySelector(".ordercontainer");
 
                 if (dashboardContent) {
@@ -159,33 +156,40 @@ document.addEventListener("DOMContentLoaded", function () {
                     content.appendChild(dashboardContent);
                     attachOverlayEvents()
                 } else {
-                    console.error("The element .productscontainer was not found.");
+                    console.error("❌ The element .ordercontainer was not found.");
                 }
             })
-            .catch((err) => console.error("Failed to load dashboard content:", err));
+            .catch((err) => console.error("❌ Failed to load dashboard content:", err));
     });
-
     function attachOverlayEvents() {
-        const orderButton = document.querySelector(".item-5-5");
-        const closeButton = document.querySelector(".view button");
-        const overlay = document.querySelector(".overlay");
-        const body = document.querySelector(".testcontainer");
-        if (!orderButton || !closeButton) {
-            console.error("❌ Overlay elements not found!");
-            return;
-        }
-
+        const orderButton = document.getElementById("ordercontent");
+        const rejectbutton = document.getElementById("reject01");
+        const overlay = document.getElementById("overlay");
+        const body = document.querySelector(".ordercontainer");
         orderButton.addEventListener("click", function () {
-            overlay.style.display = "grid";
-            body.style.backgroundColor="gray"
-            console.log("✅ Overlay opened");
-        });
 
-        closeButton.addEventListener("click", function () {
-            overlay.style.display = "none";
-            body.style.backgroundColor="white"
-            console.log("✅ Overlay closed");
-        });
+            console.log(orderButton);
+            console.log(rejectbutton);
+            console.log(overlay);
+            console.log(body);
+
+            if (!orderButton || !overlay) {
+                console.error("❌ Overlay elements not found!");
+                return;
+            }
+
+            orderButton.addEventListener("click", function () {
+                overlay.style.display = "grid";
+                body.style.backgroundColor = "gray";
+                console.log("✅ Overlay opened");
+            });
+
+            closeButton.addEventListener("click", function () {
+                overlay.style.display = "none";
+                body.style.backgroundColor = "white";
+                console.log("✅ Overlay closed");
+            });
+        })
     }
 });
 
@@ -217,13 +221,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 window.onload = function () {
-    // Get the dashboardbody and other content
     const dashboard = document.querySelector('.dashboardbody');
     const otherContent = document.querySelector('.other-content');
 
-    // Set the z-index to ensure the dashboardbody is on top
     if (dashboard) {
-        dashboard.style.zIndex = '1'; // Ensure dashboard is on top
+        dashboard.style.zIndex = '1';
         dashboard.style.position = 'absolute';
         dashboard.style.width = '1500px';
         dashboard.style.height = '1403px';
@@ -231,7 +233,6 @@ window.onload = function () {
         dashboard.style.left = '310px';
     }
 
-    // Hide other content initially, ensuring dashboard is visible first
     if (otherContent) {
         otherContent.style.visibility = 'hidden';
     }
@@ -241,10 +242,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (logoutBtn) {
         logoutBtn.addEventListener("click", function() {
-            // Clear user session
+
             localStorage.removeItem("userToken");
 
-            // Redirect to login page
             window.location.href = "../../../../htmls/login.html";
         });
     } else {

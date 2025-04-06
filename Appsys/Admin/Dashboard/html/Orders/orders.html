@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/orders/orders.css">
+    <script src="../../javascript/dashboard.js"></script>
 </head>
 <body>
 <div class="ordercontainer">
 
-    <div class="ordercontent">
+    <div class="ordercontent" id="ordercontent">
         <div class="ordertext">
             <p>Email</p>
             <p>First Name</p>
@@ -27,21 +28,21 @@
     </div>
 </div>
 </body>
-<div class="overlay">
+<div class="overlay" id="overlay">
     <button class="accept-button">Accept Orders</button>
+    <button class="reject01" id="reject01"> < </button>
     <div class="header1">
-        <button> < </button>
         <span><b>View Order</b></span>
     </div>
 
     <div class="body1">
-        <img src="ahha" alt="Delivery Icon" />
+        <img src="../../images/location.png" alt="Delivery Icon" />
         <strong>Delivery Address</strong>
         <span>Prk. 19 Lot 11, Prk. 5 Apokon, Tagum City, Davao del Norte</span>
     </div>
 
     <div class="body2">
-        <img src="ahahah" alt="Payment Icon" />
+        <img src="../../images/wallet.png" alt="Payment Icon" />
         <strong>Payment Method</strong>
         <span>Cash</span>
         <h4>₱3600</h4>
@@ -49,7 +50,7 @@
 
     <div class="footer1">
         <div class="footer0-1">
-            <img src="hahaha" alt="Order Summary Icon" />
+            <img src="../../images/clipboard.png" alt="Order Summary Icon" />
             <h5>Order Summary</h5>
         </div>
 
