@@ -4,7 +4,7 @@ function login() {
 
     if (user === "admin" && pass === "password123") {
         alert("Login successful!");
-        window.location.href = "../Admin/Dashboard/html/dashboard/dasboard.html";
+        window.location.href = "../Admin/Dashboard/html/dasboard.html";
     }else if(user === "" && pass === ""){
         alert("Customer Login successful!")
         window.location.href ="../htmls/CustomerHome.html";
