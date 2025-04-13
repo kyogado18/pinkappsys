@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="reportcontainer">
+  <div class="reportcontent">
   <div class="search">
     <img src="../images/search.png">
     <input type="search" placeholder="Search...">
@@ -38,6 +39,7 @@
     </div>
 
     <div class="total">Total: <span>100.00</span></div>
+  </div>
   </div>
 </div>
 </body>

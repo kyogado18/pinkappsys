@@ -11,8 +11,8 @@
     <div class="productcontent">
         <div class="items-1">
             <img src="../images/search.png" alt="">
-            <input type="search" placeholder="Search..">
-            <input type="submit">
+            <input type="search" placeholder="Search.." class="searchbars">
+            <input type="submit" class="buttonsubmit">
         </div>
 
         <div class="items-2">

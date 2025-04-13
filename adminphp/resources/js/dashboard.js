@@ -136,9 +136,7 @@ function optionitem(){
         productcontainer.style.pointerEvents="auto";
     })
 }
-
-document.addEventListener("DOMContentLoaded", ()=>{
-    document.getElementById("buttondashboard").addEventListener("click", function () {
+function loaddashboard(){
         fetch("../views/dashboarddisplay.php")
         .then(res => res.text())
         .then((html) => {
@@ -160,7 +158,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
         })
             .catch((err) => console.error("Failed to load dashboard content:", err))
-    })
+
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    loaddashboard();
+    document.getElementById("buttondashboard").addEventListener("click",loaddashboard)
 })
 
 document.addEventListener("DOMContentLoaded",function (){
@@ -240,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 console.log(doc);
 
-                const dashboardContent = doc.querySelector(".reportcontainer");
+                const dashboardContent = doc.querySelector(".reportcontent");
 
                 if (dashboardContent) {
                     document.getElementById("title1").innerHTML =`
