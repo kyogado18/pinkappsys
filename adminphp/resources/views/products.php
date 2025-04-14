@@ -82,8 +82,8 @@
     </div>
 
     <div class="sample2">
-        <img src="../images/sampleimage2.jpg">
-        <button><span>Edit Stock</span></button>
+        <img src="../images/sampleimage2.jpg" class="img2">
+        <button class="editbutton"><span>Edit Stock</span></button>
     </div>
 
     <div class="productid2">

@@ -33,7 +33,7 @@
       <img src="../images/sampleimg.png" alt="">
       <button><p class="customer-name">Customer</p>
       <p>Customer</p></button>
-      <a href="LandingPage.html" class="login-button">Log Out</a>
+      <a href="../../../customerphp/resources/views/login.php" class="login-button">Log Out</a>
       <span class="material-symbols-outlined">
         shopping_cart
       </span>

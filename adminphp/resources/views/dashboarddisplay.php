@@ -24,11 +24,7 @@
                     </div>
 
                     <div class="card-content">
-                        <h2 class="name">Mohamed Yousef
-                        </h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
+                        <h2 class="name">Black And Yellow Jersey </h2> 
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -41,11 +37,7 @@
                     </div>
 
                     <div class="card-content">
-                        <h2 class="name">Mohamed Yousef
-                        </h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
+                        <h2 class="name">Black And Yellow Jersey </h2> 
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -58,11 +50,7 @@
                     </div>
 
                     <div class="card-content">
-                        <h2 class="name">Mohamed Yousef
-                        </h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
+                        <h2 class="name">Black And Yellow Jersey </h2> 
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -75,11 +63,7 @@
                     </div>
 
                     <div class="card-content">
-                        <h2 class="name">Mohamed Yousef
-                        </h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
+                        <h2 class="name">Black And Yellow Jersey </h2> 
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -92,11 +76,7 @@
                     </div>
 
                     <div class="card-content">
-                        <h2 class="name">Mohamed Yousef
-                        </h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
+                        <h2 class="name">Black And Yellow Jersey </h2> 
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -109,11 +89,7 @@
                     </div>
 
                     <div class="card-content">
-                        <h2 class="name">Mohamed Yousef
-                        </h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
+                        <h2 class="name">Black And Yellow Jersey </h2> 
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -126,11 +102,7 @@
                     </div>
 
                     <div class="card-content">
-                        <h2 class="name">Mohamed Yousef
-                        </h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
+                        <h2 class="name">Black And Yellow Jersey </h2> 
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -143,11 +115,7 @@
                     </div>
 
                     <div class="card-content">
-                        <h2 class="name">Mohamed Yousef
-                        </h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
+                        <h2 class="name">Black And Yellow Jersey </h2>    
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -174,19 +142,19 @@
     <div class="stats"><h2>Statistics</h2></div>
     <div class="item-02-2">
         <div class="totalproduct">
-            <img src="../images/sampleimage2.jpg">
+            <img src="../images/cart.png">
             <h4>TOTAL PRODUCTS</h4>
             <h2>40</h2>
         </div>
 
         <div class="totalorder">
-            <img src="../images/sampleimage2.jpg">
+            <img src="../images/clipboard.png">
             <h4>TOTAL ORDERS</h4>
             <h2>100</h2>
         </div>
 
         <div class="totalsale">
-            <img src="../images/sampleimage2.jpg">
+            <img src="../images/wallet.png">
             <h4>TOTAL SALES</h4>
             <h2>100</h2>
         </div>

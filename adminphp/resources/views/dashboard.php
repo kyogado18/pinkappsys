@@ -20,7 +20,7 @@
         <img src="../images/profile.jpg" alt="">
         <button><p class="customer-name">Admin</p>
             <p>Administrator</p></button>
-        <a href="LandingPage.html" class="login-button">Log Out</a>
+        <a href="../../../customerphp/resources/views/login.php" class="login-button">Log Out</a>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>

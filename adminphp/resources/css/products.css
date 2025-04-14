@@ -96,8 +96,10 @@ body{
   background-color: pink;
 }
 .sample1 img{
-  width: 200px;
-  height: 200px;
+  width: 150px !important;
+  height: 150px !important;
+  margin-top: 60px;
+  margin-left: 20px;
 }
 .additem{
   display: grid;
@@ -106,8 +108,8 @@ body{
   background-color: white;
   width: 450px;
   height: 450px;
-  margin-top: -500px;
-  margin-left: 300px;
+  margin-top: -50px;
+  margin-left: 400px;
   z-index: 999;
   border:1px solid black;
   position: fixed;
@@ -206,8 +208,8 @@ body{
 .sample1 button{
   border-radius: 10px;
   border: none;
-  margin-top: 10px;
-  margin-left: 50px;
+  margin-top: 100px;
+  margin-left: 40px;
 }
 .sample1 button:hover{
   background-color: pink;
@@ -221,17 +223,20 @@ body{
   background-color: white;
   width: 450px;
   height: 450px;
-  margin-top: -500px;
-  margin-left: 300px;
+  margin-top: -50px;
+  margin-left: 400px;
   z-index: 999;
   border:1px solid black;
   position: fixed;
   display: none;
 }
-.sample2 img{
-  width: 200px;
-  height: 200px;
+.sample2 .img2{
+  width: 150px !important;
+  height: 150px !important;
+  margin-top: 60px;
+  margin-left: 20px;
 }
+
 .reject2{
   grid-column: 1/3;
   grid-row: 1/2;
@@ -325,8 +330,8 @@ body{
 .sample2 button{
   border-radius: 10px;
   border: none;
-  margin-top: 10px;
-  margin-left: 50px;
+  margin-top: 100px;
+  margin-left: 40px;
 }
 .sample2 button:hover{
   background-color: pink;
@@ -339,16 +344,18 @@ body{
   background-color: white;
   width: 450px;
   height: 450px;
-  margin-top: -500px;
-  margin-left: 300px;
+  margin-top: -50px;
+  margin-left: 400px;
   z-index: 999;
   border:1px solid black;
   position: fixed;
   display: none;
 }
 .sample3 img{
-  width: 200px;
-  height: 200px;
+  width: 150px !important;
+  height: 150px !important;
+  margin-top: 60px;
+  margin-left: 20px;
 }
 .reject3{
   grid-column: 1/3;
@@ -443,8 +450,8 @@ body{
 .sample3 button{
   border-radius: 10px;
   border: none;
-  margin-top: 10px;
-  margin-left: 50px;
+  margin-top: 100px;
+  margin-left: 40px;
 }
 .sample3 button:hover{
   background-color: pink;

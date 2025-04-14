@@ -4,6 +4,7 @@ function toggleMenu() {
     const nav = document.querySelector(".nav");
     nav.classList.toggle("expanded");
 }
+
 new Swiper('.card-wrapper', {
     loop: true,
     spaceBetween: 30,
@@ -75,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 })
+
 
 document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("profile").addEventListener("click", function () {
