@@ -20,7 +20,7 @@
         <img src="../../public/images/profile.jpg" alt="">
         <button><p class="customer-name">Admin</p>
             <p>Administrator</p></button>
-        <a href="../../../customerphp/resources/views/login.php" class="login-button">Log Out</a>
+        <a href="../../../CUSTOMER/resources/views/login.php" class="login-button">Log Out</a>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
@@ -43,4 +43,14 @@
 </div>
 <div class="body1" id="body1"></div>
 </body>
+
+
+<?php
+require __DIR__ . '../../../vendor/autoload.php';
+use Cocur\Slugify\Slugify;
+
+$slugify = new Slugify();
+echo $slugify->slugify('The sky is blue');
+?>
+
 </html>

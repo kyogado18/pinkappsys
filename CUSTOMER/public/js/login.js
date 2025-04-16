@@ -5,10 +5,10 @@ function login() {
 
     if (user === "admin" && pass === "password123") {
         alert("Login successful!");
-        window.location.href = "../../../adminphp/resources/views/dashboard.php";
+        window.location.href = "../../../ADMIN/resources/views/dashboard.php";
     }else if(user === "" && pass === ""){
         alert("Customer Login successful!")
-        window.location.href ="../../../customerphp/resources/views/CustomerHome.php";
+        window.location.href ="../../../CUSTOMER/resources/views/CustomerHome.php";
     } else {
         document.getElementById("message").innerText = "Invalid username or password";
     }
