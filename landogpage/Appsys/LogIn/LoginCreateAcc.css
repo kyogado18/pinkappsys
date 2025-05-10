@@ -1,0 +1,515 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container {
+  overflow: hidden;
+}
+
+.main-container,
+.main-container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+}
+.wallpaperflare {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  top: 0;
+  left: 50%;
+  background: url(https://static.codia.ai/image/2025-03-14/3c1fd9b7-a4e3-4440-a68f-b343fde6483d.png)
+    no-repeat center;
+  background-size: cover;
+  transform: translate(-50%, 0);
+}
+.create-account-1{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 51px;
+  top: -40px;
+  left: 24.781px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 14;
+}
+.image {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  top: 0;
+  left: 50%;
+  background: url(https://static.codia.ai/image/2025-03-14/9b180d2c-66df-43f2-bf6a-8f54e0b1edee.png)
+    no-repeat center;
+  background-size: cover;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+.rectangle {
+  position: absolute;
+  width: 637px;
+  height: 489px;
+  top: 331px;
+  left: 761px;
+  background: #ffffff;
+  z-index: 8;
+  border-radius: 82px;
+}
+.flex-row-dca {
+  position: relative;
+  width: 367px;
+  height: 56px;
+  margin: 67px 0 0 228px;
+  z-index: 15;
+}
+.username {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 51px;
+  top: -10px;
+  left: 24.781px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 14;
+}
+.rectangle-1 {
+  position: absolute;
+  width: 4.72px;
+  height: 47px;
+  top: 9px;
+  left: 0;
+  background: #f996ef;
+  z-index: 15;
+  border-radius: 30px;
+}
+.rectangle-2-1 {
+  display: flex;
+  position: absolute;
+  width: 370px;
+  top: 10px;
+  margin-left: 10px;
+  height: 45px;   
+ border-width: 0px 0px 2px 0px;
+
+}
+.flex-row-c {
+  position: relative;
+  width: 183px;
+  height: 56px;
+  margin: 2px 0 0 228px;
+  z-index: 35;
+}
+.first-name {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 51px;
+  top: -10px;
+  left: 16.322px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 34;
+}
+.rectangle-3 {
+  position: absolute;
+  width: 4px;
+  height: 47px;
+  top: 9px;
+  left: 0;
+  background: #f996ef;
+  z-index: 35;
+  border-radius: 30px;
+}
+.rectangle-4-1 {
+  display: flex;
+  position: absolute;
+  width: 170px;
+  top: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 45px;   
+  border-width: 0px 0px 2px 0px;
+}
+.flex-row {
+  position: relative;
+  width: 367px;
+  height: 56px;
+  margin: 3px 0 0 228px;
+  z-index: 20;
+}
+.mobile-number {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 51px;
+  top: 0px;
+  left: 19px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 19;
+}
+.rectangle-5 {
+  position: absolute;
+  width: 4.72px;
+  height: 47px;
+  top: 9px;
+  left: 0;
+  background: #f996ef;
+  z-index: 20;
+  border-radius: 30px;
+}
+.rectangle-6-1 {
+  display: flex;
+  position: absolute;
+  width: 370px;
+  top: 10px;
+  margin-left: 10px;
+  margin-top: 15px;
+  height: 45px;   
+  border-width: 0px 0px 2px 0px;
+}
+.flex-row-fd {
+  position: relative;
+  width: 369px;
+  height: 56px;
+  margin: -1px 0 0 228px;
+  z-index: 30;
+}
+.password {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 51px;
+  top: 0;
+  left: 19px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 29;
+}
+.rectangle-7 {
+  position: absolute;
+  width: 4.72px;
+  height: 47px;
+  top: 9px;
+  left: 0;
+  background: #f996ef;
+  z-index: 30;
+  border-radius: 30px;
+}
+.rectangle-8-1 {
+  display: flex;
+  position: absolute;
+  width: 370px;
+  top: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  height: 45px;   
+  border-width: 0px 0px 2px 0px;
+}
+.confirm-password {
+  display: block;
+  position: relative;
+  height: 21px;
+  margin: 0 0 0 254px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 24;
+  top: 10px;
+}
+.flex-row-ea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 369.199px;
+  height: 47px;
+  margin: -10px 0 0 228px;
+  z-index: 25;
+}
+.rectangle-9 {
+  flex-shrink: 0;
+  position: relative;
+  width: 4.72px;
+  height: 47px;
+  background: url(https://static.codia.ai/image/2025-03-14/b3e33d29-0f3f-4d97-9266-d3f3c454dcc6.svg)
+    no-repeat center;
+  background-size: cover;
+  z-index: 25;
+}
+.rectangle-a-1 {
+  display: flex;
+  position: absolute;
+  width: 370px;
+  top: 10px;
+  margin-left: -350px;
+  margin-top: 10px;
+  padding-top: 0px;
+  height: 30px;   
+  border-width: 0px 0px 2px 0px;
+}
+.flex-row-cbc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 229px;
+  height: 27px;
+  margin: 50px 0 0 295px;
+  z-index: 44;
+}
+.continue {
+  flex-shrink: 0;
+  position: relative;
+  height: 27px;
+  color: #000000;
+  background-color: white;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 27px;
+  text-align:center;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 43;
+  top: 21px;
+  width: 110px;
+  left: -28px;
+  border-radius: 20px;
+}
+.cancel {
+  flex-shrink: 0;
+  position: relative;
+  height: 27px;
+  color: #000000;
+  background-color: white;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 27px;
+  text-align:center;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 43;
+  top: 21px;
+  width: 110px;
+  left: -28px;
+  border-radius: 20px;
+}
+
+.image-d {
+  position: absolute;
+  width: 557px;
+  height: 418px;
+  top: 331px;
+  left: 1031px;
+  font-size: 0px;
+  z-index: 2;
+}
+.create-your-account {
+  display: block;
+  position: relative;
+  height: 70px;
+  margin: 14px 0 0 20px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  z-index: 45;
+}
+.accept-terms-condition {
+  position: relative;
+  width: 251px;
+  height: 20px;
+  margin: 269px 0 0 89px;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  text-overflow: initial;
+  white-space: nowrap;
+  letter-spacing: 0.11px;
+  z-index: 40;
+}
+.i-accept {
+  position: relative;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 70px;
+  text-align: left;
+  letter-spacing: 0.11px;
+}
+.terms-and-condition {
+  position: relative;
+  color: #81a6fc;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 70px;
+  text-align: left;
+  letter-spacing: 0.11px;
+}
+.rectangle-e {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0 64px;
+  background: url(https://static.codia.ai/image/2025-03-14/0c18a3e3-a0d0-4688-b62e-24d7de962f06.svg)
+    no-repeat center;
+  background-size: cover;
+  z-index: 39;
+}
+.last-name {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 51px;
+  top: -11px;
+  left: 210px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.1px;
+  z-index: 37;
+}
+.rectangle-f {
+  position: absolute;
+  width: 4px;
+  height: 47px;
+  top: 15px;
+  left: 195px;
+  background: #f996ef;
+  z-index: 38;
+  border-radius: 30px;
+}
+.rectangle-10-1 {
+  display: flex;
+  position: absolute;
+  width: 170px;
+  top: 10px;
+  padding-top: -500px;
+  margin-left: 207px;
+  margin-top: 10px;
+  height: 45px;   
+  border-width: 0px 0px 2px 0px;
+}
+.rectangle-11 {
+  position: absolute;
+  width: 410px;
+  height: 487px;
+  top: 339px;
+  left: 478px;
+  background: #ffa1a1;
+  z-index: 9;
+  border-radius: 82px;
+}
+.image-12 {
+  position: relative;
+  width: 307px;
+  height: 307px;
+  margin: 73px 0 0 51px;
+  background: url(https://static.codia.ai/image/2025-03-14/575e8430-a812-4762-96be-12ae14d2bf66.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 10;
+}
+.create-account {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 37.617px;
+  top: 349.3px;
+  left: 652px;
+  color: #000000;
+  font-family: Poppins, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 37.617px;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  z-index: 5;
+}
+.rectangle-13 {
+  position: absolute;
+  width: 0.26%;
+  height: 7.41%;
+  top: 71.2%;
+  left: 33.18%;
+  background: #ffa1a1;
+  z-index: 3;
+  border-radius: 30px;
+}

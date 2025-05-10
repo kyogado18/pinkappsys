@@ -1,0 +1,607 @@
+.reportbody{
+    margin-top: -90px;
+    margin-left: -310px;
+    display: flex;
+    position: absolute;
+    width: 1500px;
+    height: 1403px;
+    top: 90px;
+    left: 310px;
+    background: #f6f6f6;
+    z-index: 1;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+  .search-box {
+    position: absolute;
+    width: 865px;
+    height: 69px;
+    top: 90px;
+    left: 400px;
+    background: #ffffff;
+    z-index: 75;
+    border-radius: 30px;
+  }
+  .search-date {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 70px;
+    border: 0;
+    width: 700px;
+    top: -1px;
+    left: 105px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 70px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+    z-index: 77;
+  }
+  .image-9 {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 14px;
+    left: 817px;
+    background: url(https://static.codia.ai/image/2025-03-15/799ab368-34f2-4f97-a68d-1921c19a4d77.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 78;
+  }
+  .magnifying-glass {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    top: 20px;
+    left: 37px;
+    background: url(https://static.codia.ai/image/2025-03-15/74816ba5-64c3-4ffb-ba90-632554fa4472.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 76;
+  }
+  .image-a {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 208px;
+    left: 690px;
+    z-index: 61;
+    border-radius: 60px;
+  }
+  .rectangle-b {
+    position: absolute;
+    width: 704px;
+    height: 44px;
+    top: 260px;
+    left: 470px;
+    background: url(https://static.codia.ai/image/2025-03-15/c064e078-130e-4c13-aa4c-50c98a8cb801.svg)
+      no-repeat center;
+    background-size: cover;
+    z-index: 64;
+  }
+  .rectangle-c {
+    position: absolute;
+    width: 85px;
+    height: 44px;
+    top: 0;
+    left: 396px;
+    background: url(https://static.codia.ai/image/2025-03-15/097574bc-a4a1-4c7f-8897-52ca68523818.svg)
+      no-repeat center;
+    background-size: cover;
+    z-index: 69;
+  }
+  .monthly {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 7px;
+    left: 0;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 70;
+  }
+  .rectangle-d {
+    position: absolute;
+    width: 85px;
+    height: 44px;
+    top: 0;
+    left: 576px;
+    background: url(https://static.codia.ai/image/2025-03-15/4573244d-1227-4254-bba0-3cddfdc9a5c5.svg)
+      no-repeat center;
+    background-size: cover;
+    z-index: 72;
+  }
+  .annual {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 7px;
+    left: 7px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 73;
+  }
+  .weekly {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 7px;
+    left: 217px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 66;
+  }
+  .daily {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 7px;
+    left: 38px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 67;
+  }
+  .rectangle-e {
+    position: absolute;
+    width: 37px;
+    height: 6px;
+    top: 34px;
+    left: 42px;
+    background: url(https://static.codia.ai/image/2025-03-15/fa9081c3-c4fe-48ab-9c79-ab2db8e6ef95.svg)
+      no-repeat center;
+    background-size: cover;
+    z-index: 65;
+  }
+  .scroll-bar {
+    position: absolute;
+    width: 17.35px;
+    height: 771.75px;
+    top: 331.625px;
+    left: 1620.492px;
+    background: url(https://static.codia.ai/image/2025-03-15/f94c56c7-27a2-4ee5-bf5a-5fdba6de495b.svg)
+      no-repeat center;
+    background-size: cover;
+    z-index: 30;
+    border-radius: 15px;
+  }
+  .scroll-pane {
+    position: absolute;
+    width: 1099px;
+    height: 883px;
+    top: 400px;
+    left: 300px;
+    background: #ffffff;
+    z-index: 3;
+    border-radius: 20px;
+  }
+  .flex-row-bbd {
+    position: relative;
+    width: 941.534px;
+    height: 55.575px;
+    margin: 57px 0 0 101.134px;
+    z-index: 7;
+  }
+  .date {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 90.221px;
+    height: 51.45px;
+    top: 0;
+    left: 0;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 4;
+  }
+  .sales {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 124.921px;
+    height: 51.45px;
+    top: 0;
+    left: 594.531px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 6;
+  }
+  .sold {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 138.801px;
+    height: 51.45px;
+    top: 0;
+    left: 802.732px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 7;
+  }
+  .order-id {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 127.234px;
+    height: 51.45px;
+    top: 4.125px;
+    left: 341.249px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 5;
+  }
+  .selector {
+    position: relative;
+    width: 954.258px;
+    height: 3px;
+    margin: 16.67px 0 0 78px;
+    background: url(https://static.codia.ai/image/2025-03-15/f720ffe2-a403-47d1-9b31-a543c2b2db39.svg)
+      no-repeat center;
+    background-size: cover;
+    z-index: 9;
+  }
+  .flex-row {
+    position: relative;
+    width: 940.128px;
+    height: 53px;
+    margin: 71.88px 0 0 101.383px;
+    z-index: 14;
+  }
+  .span {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 264px;
+    height: 52px;
+    top: 0;
+    left: 0;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 11;
+  }
+  .span-p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 123.764px;
+    height: 51.45px;
+    top: 0.36px;
+    left: 601.222px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 13;
+  }
+  .span-f {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 137.644px;
+    height: 51.45px;
+    top: 0.36px;
+    left: 802.483px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 14;
+  }
+  .span-p-10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 88px;
+    height: 51px;
+    top: 2px;
+    left: 342px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 12;
+  }
+  .flex-row-e {
+    position: relative;
+    width: 947.068px;
+    height: 56px;
+    margin: 63px 0 0 101.383px;
+    z-index: 19;
+  }
+  .span-p-11 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 143.428px;
+    height: 51.45px;
+    top: 0;
+    left: 341px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 17;
+  }
+  .span-12 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 195px;
+    height: 52px;
+    top: 4px;
+    left: 0;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 16;
+  }
+  .span-p-13 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 68.244px;
+    height: 51.45px;
+    top: 4.415px;
+    left: 601.222px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 18;
+  }
+  .span-14 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 144.584px;
+    height: 51.45px;
+    top: 4.415px;
+    left: 802.483px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 19;
+  }
+  .flex-row-15 {
+    position: relative;
+    width: 944.755px;
+    height: 56px;
+    margin: 64px 0 0 101.383px;
+    z-index: 24;
+  }
+  .span-p-16 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 164.248px;
+    height: 51.45px;
+    top: 0;
+    left: 341px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 22;
+  }
+  .span-17 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 223px;
+    height: 52px;
+    top: 4px;
+    left: 0;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 21;
+  }
+  .p600 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 83.281px;
+    height: 51.45px;
+    top: 4.465px;
+    left: 601.222px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 23;
+  }
+  .text-1c {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 142.271px;
+    height: 51.45px;
+    top: 4.465px;
+    left: 802.483px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 24;
+  }
+  .flex-row-18 {
+    position: relative;
+    width: 938.971px;
+    height: 51.45px;
+    margin: 61.655px 0 0 101.383px;
+    z-index: 29;
+  }
+  .p700 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 91.377px;
+    height: 51.45px;
+    top: 0;
+    left: 601.222px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 28;
+  }
+  .text-1e {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 136.488px;
+    height: 51.45px;
+    top: 0;
+    left: 802.483px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 29;
+  }
+  .text-1f {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 264px;
+    height: 51px;
+    top: 0.34px;
+    left: 0;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 26;
+  }
+  .p00005 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 89px;
+    height: 51px;
+    top: 0.34px;
+    left: 341px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    z-index: 27;
+  }
+  .total {
+    display: block;
+    position: relative;
+    height: 38px;
+    margin: 172.77px 0 0 868px;
+    color: #000000;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 8;
+  }
